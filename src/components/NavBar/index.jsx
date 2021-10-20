@@ -7,7 +7,7 @@ export const NavBar = () => (
     </Nav>
     <Nav>
       <Main1>TODAY PRODUCT</Main1>
-      <Main1>DAILY FASHION</Main1>
+      <h2>DAILY FASHION</h2>
       <Main1>CONTACT US</Main1>
     </Nav>
   </div>

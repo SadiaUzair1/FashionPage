@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux'
 
-import { Colors } from 'containers'
 import Button from './styleComponents'
 
 export const Sizes = () => {
@@ -13,7 +12,7 @@ export const Sizes = () => {
 
   return (
     <div className={'ml-5'}>
-      <p>SELECT YOUR TYPE</p>
+      <h2>SELECT YOUR SIZE</h2>
       {Array.from({ length: sizesAndColor.sizes.length }, (v, i) => (
         <Button
           onClick={() => {
@@ -26,8 +25,6 @@ export const Sizes = () => {
         </Button>
       ))}
       <hr />
-      <p>SELECT A COLOR</p>
-      <Colors />
     </div>
   )
 }
