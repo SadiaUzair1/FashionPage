@@ -1,13 +1,7 @@
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 export const ClothChoices = () => {
-  const images = [
-    '/images/jumpsuit-1.jpg',
-    '/images/jumpsuit-2.jpg',
-    '/images/jumpsuit-3.jpg',
-    '/images/jumpsuit-4.jpg',
-    '/images/jumpsuit-5.jpg'
-  ]
+  const images = useSelector(state => state.clothReducer.images)
   const dispatch = useDispatch()
   const handleImageChoice = type => {
     dispatch({ type: type })
@@ -22,7 +16,7 @@ export const ClothChoices = () => {
               handleImageChoice(i)
             }}
             type={'image'}
-            src={images[i]}
+            src={images[i].url}
             height={50}
           />
         </div>

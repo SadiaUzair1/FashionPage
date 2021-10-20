@@ -1,32 +1,30 @@
-import * as initialState from './initialStates'
-import { clothChoices } from './initialStates'
-
-export const clothReducer = (state = initialState.renderCloth, action) => {
+import { product } from './initialStates'
+export const clothReducer = (state = product, action) => {
   switch (action.type) {
     case 0:
       return {
         ...state,
-        clothImage: clothChoices.image0
+        type: product.images[0].url
       }
     case 1:
       return {
         ...state,
-        clothImage: clothChoices.image1
+        type: product.images[1].url
       }
     case 2:
       return {
         ...state,
-        clothImage: clothChoices.image2
+        type: product.images[2].url
       }
     case 3:
       return {
         ...state,
-        clothImage: clothChoices.image3
+        type: product.images[3].url
       }
     case 4:
       return {
         ...state,
-        clothImage: clothChoices.image4
+        type: product.images[4].url
       }
 
     default:

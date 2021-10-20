@@ -1,5 +1,4 @@
-import { ClothChoices, ClothImage } from 'containers'
-import { ItemNameAndPrice } from 'containers/ItemNameAndPrice'
+import { ClothChoices, ClothImage, ItemNameAndPrice } from 'containers'
 import { Div } from './styleComponents'
 
 export const MainClothAndChoices = () => {
