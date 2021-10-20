@@ -1,5 +1,5 @@
 import { NavBar } from './components'
-import { Colors, MainClothAndChoices } from './containers'
+import { MainClothAndChoices } from './containers'
 import './App.css'
 const App = () => {
   return (
@@ -10,9 +10,9 @@ const App = () => {
       <div>
         <MainClothAndChoices />
       </div>
-      <div>
+      {/* <div>
         <Colors />
-      </div>
+      </div> */}
     </div>
   )
 }

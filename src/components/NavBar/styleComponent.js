@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Main = styled.main`
   &:hover {
-    background: gray;
+    background: #d3d3d3;
   }
   font-size: 1em;
   margin: 1em;

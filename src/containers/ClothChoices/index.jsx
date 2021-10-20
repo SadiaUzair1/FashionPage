@@ -8,8 +8,8 @@ export const ClothChoices = () => {
   }
 
   return (
-    <div className={'mt-5 mr-5'}>
-      {Array.from({ length: 5 }, (v, i) => (
+    <div>
+      {Array.from({ length: images.length }, (v, i) => (
         <div key={i}>
           <input
             onClick={() => {

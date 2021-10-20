@@ -40,6 +40,7 @@ export const product = {
   ],
   colors: ['black', 'red', 'orange', 'blue'],
   name: 'The Special Pantsuit',
+  count: 0,
   description:
     'This is the coolest pantsuit you"ve ever seen. Fits like a dream. Wear this everywhere, and nowhere.',
   bullets: [
@@ -63,7 +64,8 @@ export const product = {
     '100% silk which feels very nice. These are meant to be warn slightly baggy so that they are comfortable. Zipper front with rolled up sleeves. Hip pockets on the front.',
   modal: {
     isOpen: false,
-    type: 'images/jumpsuit-1.jpg'
+    type: '',
+    sizeId: 0
   },
   cart: [{ quantity: 2, colorId: 'black', sizeId: 123 }],
   currency: {
