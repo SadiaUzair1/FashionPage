@@ -1,5 +1,5 @@
-import { Colors, NavBar } from './components'
-import { ClothImage } from './containers'
+import { NavBar } from './components'
+import { Colors, MainClothAndChoices } from './containers'
 import './App.css'
 const App = () => {
   return (
@@ -8,7 +8,7 @@ const App = () => {
         <NavBar />
       </div>
       <div>
-        <ClothImage />
+        <MainClothAndChoices />
       </div>
       <div>
         <Colors />

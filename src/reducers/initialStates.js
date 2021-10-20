@@ -5,8 +5,9 @@ export const sizes = {
   quantity: 0
 }
 
-export const specs = {
+export const itemDetails = {
   name: 'The Special Pantsuit',
+  price: 12000,
   description:
     'This is the coolest pantsuit you have ever seen. Fits like a dream. Wear this everywhere, and nowhere.',
   bullets: {
@@ -39,8 +40,7 @@ export const materials = {
   material: 'silk'
 }
 
-export const details = {
-  price: 12000,
+export const materialDetails = {
   sizeInfo:
     'These are sized a little small. We advise ordering the next size up from what you normally wear.',
   materialInfo:

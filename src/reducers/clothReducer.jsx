@@ -2,7 +2,6 @@ import * as initialState from './initialStates'
 import { clothChoices } from './initialStates'
 
 export const clothReducer = (state = initialState.renderCloth, action) => {
-  // console.log(state)
   switch (action.type) {
     case 0:
       return {
