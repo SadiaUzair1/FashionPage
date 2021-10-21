@@ -10,9 +10,6 @@ const App = () => {
       <div>
         <MainClothAndChoices />
       </div>
-      {/* <div>
-        <Colors />
-      </div> */}
     </div>
   )
 }

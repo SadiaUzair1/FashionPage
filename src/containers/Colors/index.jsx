@@ -6,7 +6,7 @@ import { Button, Div } from './styleComponents'
 export const Colors = () => {
   const dispatch = useDispatch()
   const selectedColors = useSelector(state => state.cartReducer)
-  const states = useSelector(state => state.clothReducer)
+  const states = useSelector(state => state.itemReducer)
   let [index, setIndex] = useState(0)
 
   useEffect(() => {

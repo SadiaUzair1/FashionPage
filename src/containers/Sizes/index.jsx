@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import Button from './styleComponents'
 
 export const Sizes = () => {
-  const sizesAndColor = useSelector(state => state.clothReducer)
+  const sizesAndColor = useSelector(state => state.itemReducer)
   const dispatch = useDispatch()
 
   const handleColor = index => {

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 export const ClothImage = () => {
   const dispatch = useDispatch()
-  const selectedCloth = useSelector(state => state.clothReducer)
+  const selectedCloth = useSelector(state => state.itemReducer)
 
   useEffect(() => {
     dispatch({ type: 0 })

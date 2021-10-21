@@ -1,7 +1,7 @@
 export { ClothChoices } from 'containers/ClothChoices'
 export { ClothImage } from 'containers/ClothImage'
 export { Colors } from 'containers/Colors'
-export { ItemNameAndPrice } from 'containers/ItemNameAndPrice'
+export { ItemFeatures } from 'containers/ItemFeatures'
 export { MainClothAndChoices } from 'containers/MainClothAndChoices'
 export { Materials } from 'containers/Materials'
 export { Quantity } from 'containers/Quantity'

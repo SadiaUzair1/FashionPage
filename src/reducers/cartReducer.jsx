@@ -51,6 +51,18 @@ export const cartReducer = (state = cartObject, action) => {
         colorId: action.type,
         count: state.count + 1
       }
+    case '+':
+      return {
+        ...state,
+        quantity: state.quantity + 1,
+        count: state.count + 1
+      }
+    case '-':
+      return {
+        ...state,
+        quantity: state.quantity - 1,
+        count: state.count + 1
+      }
   }
   return state
 }

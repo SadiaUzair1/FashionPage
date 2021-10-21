@@ -1,5 +1,5 @@
 import { product } from './initialStates'
-export const clothReducer = (state = product, action) => {
+export const itemReducer = (state = product, action) => {
   switch (action.type) {
     case 0:
       return {

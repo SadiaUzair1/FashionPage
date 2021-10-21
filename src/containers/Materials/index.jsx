@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
 
 export const Materials = () => {
-  const clothMaterial = useSelector(state => state.clothReducer)
+  const clothMaterial = useSelector(state => state.itemReducer)
 
   return (
     <div>
