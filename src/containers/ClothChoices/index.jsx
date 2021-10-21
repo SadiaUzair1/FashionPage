@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 export const ClothChoices = () => {
   const images = useSelector(state => state.itemReducer.images)
   const dispatch = useDispatch()
+
   const handleImageChoice = type => {
     dispatch({ type: type })
   }

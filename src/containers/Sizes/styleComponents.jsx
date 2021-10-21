@@ -2,12 +2,13 @@ import styled from 'styled-components'
 
 const Button = styled.button`
   &:hover {
-    background: #d3d3d3;
+    background-color: palevioletred;
+    color: white;
   }
-  color: palevioletred;
+  color: black;
   font-size: 1em;
   margin: 1em;
-  padding: 0.25em 2em;
+  padding: 0.9em 2em;
   border-radius: 50%;
 `
 export default Button

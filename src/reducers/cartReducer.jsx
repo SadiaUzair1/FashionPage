@@ -1,7 +1,6 @@
 import { cartObject } from './initialStates'
 
 export const cartReducer = (state = cartObject, action) => {
-  console.log(state, action)
   switch (action.type) {
     case 123:
       return {

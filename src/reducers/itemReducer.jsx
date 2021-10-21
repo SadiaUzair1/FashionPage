@@ -1,4 +1,5 @@
 import { product } from './initialStates'
+
 export const itemReducer = (state = product, action) => {
   switch (action.type) {
     case 0:
@@ -25,6 +26,18 @@ export const itemReducer = (state = product, action) => {
       return {
         ...state,
         type: product.images[4].url
+      }
+    case 'cart':
+      return {
+        ...state,
+        cart: [
+          ...state.cart,
+          {
+            sizeId: action.payload.sizeId,
+            colorId: action.payload.sizeId,
+            quantity: action.payload.quantity
+          }
+        ]
       }
 
     default:

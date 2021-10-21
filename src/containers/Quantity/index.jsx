@@ -11,15 +11,19 @@ export const Quantity = () => {
   let [totalquantity, settotalquantity] = useState(0)
 
   useEffect(() => {
+    let check = false
     for (let i = 0; i < clothQuantity.sizes.length; i++) {
       if (cart.sizeId == clothQuantity.sizes[i].id) {
         for (let j = 0; j < clothQuantity.sizes[i].colors.length; j++) {
           if (cart.colorId == clothQuantity.sizes[i].colors[j].name) {
-            console.log(clothQuantity.sizes[i].colors[j].quantity)
+            check = true
             settotalquantity((totalquantity = clothQuantity.sizes[i].colors[j].quantity))
           }
         }
       }
+    }
+    if (check == false) {
+      settotalquantity((totalquantity = 0))
     }
   }, [cart.count])
 
@@ -38,7 +42,7 @@ export const Quantity = () => {
   return (
     <div>
       <div>
-        <h2>QUANTITY</h2>
+        <h3>QUANTITY</h3>
         <Div>
           <Button onClick={() => handleQuantity('-')}> - </Button>
           <p>{cart.quantity}</p>

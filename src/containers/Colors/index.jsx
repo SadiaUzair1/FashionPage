@@ -22,7 +22,7 @@ export const Colors = () => {
   }
   return (
     <div>
-      <h2>SELECT A COLOR</h2>
+      <h3>SELECT A COLOR</h3>
       <Div className={'d-inline-flex'}>
         {Array.from({ length: states.sizes[index].colors.length }, (v, i) => (
           <div key={i}>

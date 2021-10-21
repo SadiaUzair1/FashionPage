@@ -12,7 +12,7 @@ export const Sizes = () => {
 
   return (
     <div className={'ml-5'}>
-      <h2>SELECT YOUR SIZE</h2>
+      <h3>SELECT YOUR SIZE</h3>
       {Array.from({ length: sizesAndColor.sizes.length }, (v, i) => (
         <Button
           onClick={() => {
