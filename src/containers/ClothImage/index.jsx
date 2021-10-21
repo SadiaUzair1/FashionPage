@@ -11,7 +11,7 @@ export const ClothImage = () => {
 
   return (
     <div className={'ml-5'}>
-      <img src={selectedCloth.type} width={550} height={600} />
+      <img src={selectedCloth.type} width={550} height={700} />
     </div>
   )
 }

@@ -17,7 +17,7 @@ export const ClothChoices = () => {
             }}
             type={'image'}
             src={images[i].url}
-            height={50}
+            height={70}
           />
         </div>
       ))}
