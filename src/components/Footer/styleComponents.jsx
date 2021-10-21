@@ -12,9 +12,7 @@ export const Main = styled.main`
   width: 100%;
 `
 export const Main1 = styled(Main)`
-  &:hover {
-    background: #d3d3d3;
-  }
+  display: block;
   margin-right: 2em;
   margin-top: 5em;
 `
