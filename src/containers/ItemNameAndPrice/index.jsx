@@ -1,5 +1,6 @@
-import { Colors, Materials, Sizes } from 'containers'
 import { useSelector } from 'react-redux'
+
+import { Colors, Materials, Quantity, Sizes } from 'containers'
 
 export const ItemNameAndPrice = () => {
   const item = useSelector(state => state.clothReducer)
@@ -14,6 +15,7 @@ export const ItemNameAndPrice = () => {
       <Sizes />
       <Colors />
       <Materials />
+      <Quantity />
     </div>
   )
 }
