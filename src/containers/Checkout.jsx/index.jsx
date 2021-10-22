@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { Button } from './styleComponents.jsx'
 
 export const Checkout = () => {
   const price = useSelector(state => state.itemReducer)
+  const dispatch = useDispatch()
+
   let [total, setTotal] = useState(0)
 
   useEffect(() => {
@@ -14,13 +16,17 @@ export const Checkout = () => {
     }
   }, [price.cart])
 
+  const handleCheckout = () => {
+    dispatch({ type: 'resetCart' })
+  }
+
   return (
     <div>
       <h3>
         SubTotal : {price.currency.symbol} {''} {total} {''}
         {price.currency.title}
       </h3>
-      <Button> CHECKOUT </Button>
+      <Button onClick={() => handleCheckout()}> CHECKOUT </Button>
     </div>
   )
 }

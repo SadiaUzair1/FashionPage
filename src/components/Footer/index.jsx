@@ -11,7 +11,6 @@ export const Footer = () => (
     </Div>
     <Nav>
       <Main1> For Contact</Main1>
-      <p></p>
       <Main1> example@example.com</Main1>
     </Nav>
   </div>

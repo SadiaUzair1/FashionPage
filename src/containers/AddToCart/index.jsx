@@ -7,8 +7,11 @@ export const AddToBag = () => {
   const cart = useSelector(state => state.cartReducer)
 
   const handleCart = () => {
-    dispatch({ type: 'cart', payload: cart })
-    dispatch({ type: 'reset' })
+    if (cart.quantity > 0) {
+      dispatch({ type: 'add', payload: cart })
+      dispatch({ type: 'reset' })
+      dispatch({ type: 'decreaseItemQuantity', payload: cart })
+    }
   }
 
   return (

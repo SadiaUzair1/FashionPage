@@ -7,7 +7,7 @@ export const Materials = () => {
     <div>
       <h3>MATERIAL</h3>
       {Array.from({ length: clothMaterial.materials.length }, (v, i) => (
-        <p> {clothMaterial.materials[i].toUpperCase()}</p>
+        <p key={i}> {clothMaterial.materials[i].toUpperCase()}</p>
       ))}
       <hr />
     </div>

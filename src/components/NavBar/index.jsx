@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
 
-import { Main, Main1, Main2, Nav, Nav1, StyledLink } from './styleComponent'
+import { Div, Main, Main1, Main2, Nav, Nav1, StyledLink } from './styleComponent'
 
 export const NavBar = () => (
-  <div>
+  <Div>
     <Nav1 className={'Navbar navbar-light d-flex justify-content-between'}>
       <Main>Daily Fashion</Main>
       <Main>FREE SHIPPING</Main>
@@ -20,5 +20,5 @@ export const NavBar = () => (
       <h3>DAILY FASHION</h3>
       <Main1>CONTACT US</Main1>
     </Nav>
-  </div>
+  </Div>
 )
