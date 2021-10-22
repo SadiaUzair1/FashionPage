@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import { Footer, NavBar } from './components'
-import { MainClothAndChoices } from './containers'
+import { ChatRoom, MainClothAndChoices } from './containers'
 import './App.css'
 import { Bag } from 'containers/Bag'
 
@@ -14,6 +14,9 @@ const App = () => {
       <Switch>
         <Route path={'/bag'}>
           <Bag />
+        </Route>
+        <Route path={'/chat'}>
+          <ChatRoom />
         </Route>
         <Route path={'/'}>
           <MainClothAndChoices />

@@ -78,3 +78,7 @@ export const cartObject = {
   sizeId: 0,
   count: 0
 }
+
+export const chat = {
+  chat: [{ chat: '' }]
+}

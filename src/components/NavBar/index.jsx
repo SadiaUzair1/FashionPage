@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import { Main, Main1, Main2, Nav, Nav1, StyledLink } from './styleComponent'
 
 export const NavBar = () => (
@@ -6,9 +8,9 @@ export const NavBar = () => (
       <Main>Daily Fashion</Main>
       <Main>FREE SHIPPING</Main>
       <Main2>
-        <StyledLink to={'/bag'}>
+        <Link to={'/bag'}>
           <img src={'images/bag.png'} height={25} />
-        </StyledLink>
+        </Link>
       </Main2>
     </Nav1>
     <Nav>

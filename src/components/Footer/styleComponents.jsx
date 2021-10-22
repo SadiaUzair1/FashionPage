@@ -22,3 +22,6 @@ export const Nav = styled.nav`
   display: inline-flex;
   width: 100%;
 `
+export const Div = styled.div`
+  margin-left: 90%;
+`
