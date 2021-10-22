@@ -8,6 +8,7 @@ export const AddToBag = () => {
 
   const handleCart = () => {
     dispatch({ type: 'cart', payload: cart })
+    dispatch({ type: 'reset' })
   }
 
   return (

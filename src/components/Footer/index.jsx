@@ -1,4 +1,5 @@
 import { Main1, Nav } from './styleComponents'
+
 export const Footer = () => (
   <div>
     <Nav>

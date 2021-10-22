@@ -7,24 +7,20 @@ import { Bag } from 'containers/Bag'
 
 const App = () => {
   return (
-    <div>
-      <Router>
-        <div className={'App'}>
-          <NavBar />
-        </div>
-        <Switch>
-          <Route path={'/bag'}>
-            <Bag />
-          </Route>
-          <Route path={'/'}>
-            <MainClothAndChoices />
-          </Route>
-        </Switch>
-      </Router>
-      <div>
-        <Footer />
+    <Router>
+      <div className={'App'}>
+        <NavBar />
       </div>
-    </div>
+      <Switch>
+        <Route path={'/bag'}>
+          <Bag />
+        </Route>
+        <Route path={'/'}>
+          <MainClothAndChoices />
+        </Route>
+      </Switch>
+      <Footer />
+    </Router>
   )
 }
 

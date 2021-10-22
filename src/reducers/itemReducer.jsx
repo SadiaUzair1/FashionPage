@@ -1,6 +1,7 @@
 import { product } from './initialStates'
 
 export const itemReducer = (state = product, action) => {
+  console.log(state, action.payload)
   switch (action.type) {
     case 0:
       return {
@@ -34,12 +35,17 @@ export const itemReducer = (state = product, action) => {
           ...state.cart,
           {
             sizeId: action.payload.sizeId,
-            colorId: action.payload.sizeId,
+            colorId: action.payload.colorId,
             quantity: action.payload.quantity
           }
         ]
       }
-
+    case 'remove':
+      // let updatedCart = state.cart.filter(cartItem => cartItem.sizeId !== action.payload)
+      return {
+        ...state,
+        cart: state.cart.filter(cartItem => cartItem.sizeId !== action.payload)
+      }
     default:
       return state
   }

@@ -62,6 +62,14 @@ export const cartReducer = (state = cartObject, action) => {
         quantity: state.quantity - 1,
         count: state.count + 1
       }
+    case 'reset':
+      return {
+        ...state,
+        quantity: 0,
+        colorId: '',
+        sizeId: 0,
+        count: state.count + 1
+      }
   }
   return state
 }

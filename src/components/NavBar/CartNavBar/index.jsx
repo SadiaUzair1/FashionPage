@@ -8,5 +8,6 @@ export const CartNavBar = () => (
       </Main3>
     </nav>
     <Main4>We offer free shipping and 60 days return </Main4>
+    <hr />
   </div>
 )
