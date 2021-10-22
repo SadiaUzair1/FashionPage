@@ -8,7 +8,7 @@ export const Quantity = () => {
   const cart = useSelector(state => state.cartReducer)
   const dispatch = useDispatch()
 
-  let [totalquantity, settotalquantity] = useState(0)
+  let [totalQuantity, settotalQuantity] = useState(0)
 
   useEffect(() => {
     let check = false
@@ -17,23 +17,27 @@ export const Quantity = () => {
         for (let j = 0; j < clothQuantity.sizes[i].colors.length; j++) {
           if (cart.colorId == clothQuantity.sizes[i].colors[j].name) {
             check = true
-            settotalquantity((totalquantity = clothQuantity.sizes[i].colors[j].quantity))
+            settotalQuantity((totalQuantity = clothQuantity.sizes[i].colors[j].quantity))
+            if (totalQuantity < cart.quantity) {
+              dispatch({ type: 'resetQuantity', payload: totalQuantity })
+            }
           }
         }
       }
     }
     if (check == false) {
-      settotalquantity((totalquantity = 0))
+      settotalQuantity((totalQuantity = 0))
+      dispatch({ type: 'resetQuantity', payload: 0 })
     }
   }, [cart.count])
 
   const handleQuantity = change => {
     if (change == '-') {
-      if (cart.quantity > 0) {
+      if (cart.quantity > 1) {
         dispatch({ type: '-' })
       }
     } else if (change == '+') {
-      if (cart.quantity < totalquantity) {
+      if (cart.quantity < totalQuantity) {
         dispatch({ type: '+' })
       }
     }
@@ -47,7 +51,7 @@ export const Quantity = () => {
           <Button onClick={() => handleQuantity('-')}> - </Button>
           <p>{cart.quantity}</p>
           <Button onClick={() => handleQuantity('+')}> + </Button>
-          <p> Available Quantity: {totalquantity}</p>
+          <p> Available Quantity: {totalQuantity}</p>
         </Div>
         <hr />
       </div>

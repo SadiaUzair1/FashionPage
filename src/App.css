@@ -32,7 +32,12 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+* {
+  font-family: 'Lasiver-Medium', "HelveticaNeue-CondensedBold", Helvetica, Helmut, Arial, "Lucida Grande", sans-serif;
 }

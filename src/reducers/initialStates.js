@@ -73,7 +73,7 @@ export const product = {
   }
 }
 export const cartObject = {
-  quantity: 0,
+  quantity: 1,
   colorId: '',
   sizeId: 0,
   count: 0

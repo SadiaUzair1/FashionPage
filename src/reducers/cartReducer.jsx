@@ -62,6 +62,12 @@ export const cartReducer = (state = cartObject, action) => {
         quantity: state.quantity - 1,
         count: state.count + 1
       }
+    case 'resetQuantity':
+      return {
+        ...state,
+        quantity: action.payload,
+        count: state.count + 1
+      }
     case 'reset':
       return {
         ...state,

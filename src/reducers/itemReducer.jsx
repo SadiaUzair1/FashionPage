@@ -41,7 +41,6 @@ export const itemReducer = (state = product, action) => {
         ]
       }
     case 'remove':
-      // let updatedCart = state.cart.filter(cartItem => cartItem.sizeId !== action.payload)
       return {
         ...state,
         cart: state.cart.filter(cartItem => cartItem.sizeId !== action.payload)

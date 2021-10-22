@@ -8,10 +8,11 @@ export const Checkout = () => {
   let [total, setTotal] = useState(0)
 
   useEffect(() => {
+    setTotal((total = 0))
     for (let i = 0; i < price.cart.length; i++) {
       setTotal((total = total + (price.price * price.cart[i].quantity) / 100))
     }
-  }, [])
+  }, [price.cart])
 
   return (
     <div>
