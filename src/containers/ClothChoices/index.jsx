@@ -4,8 +4,8 @@ export const ClothChoices = () => {
   const images = useSelector(state => state.itemReducer.images)
   const dispatch = useDispatch()
 
-  const handleImageChoice = type => {
-    dispatch({ type: type })
+  const handleImageChoice = order => {
+    dispatch({ type: 'image', payload: order })
   }
 
   return (

@@ -7,7 +7,8 @@ export const Sizes = () => {
   const dispatch = useDispatch()
 
   const handleColor = index => {
-    dispatch({ type: sizesAndColor.sizes[index].id })
+    console.log(sizesAndColor.sizes[index].id)
+    dispatch({ type: 'size', payload: sizesAndColor.sizes[index].id })
   }
 
   return (

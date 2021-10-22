@@ -6,7 +6,7 @@ export const ClothImage = () => {
   const selectedCloth = useSelector(state => state.itemReducer)
 
   useEffect(() => {
-    dispatch({ type: 0 })
+    dispatch({ type: 'image', payload: 0 })
   }, [])
 
   return (

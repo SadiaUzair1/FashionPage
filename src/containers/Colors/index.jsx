@@ -18,7 +18,7 @@ export const Colors = () => {
   }, [selectedColors.count])
 
   const handleColor = colorId => {
-    dispatch({ type: states.sizes[index].colors[colorId].name })
+    dispatch({ type: 'color', payload: states.sizes[index].colors[colorId].name })
   }
   return (
     <div>
