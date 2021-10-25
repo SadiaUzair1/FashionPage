@@ -41,7 +41,7 @@ export const cartReducer = (state = cartObject, action) => {
         ...state,
         quantity: 0,
         colorId: '',
-        sizeId: 0,
+        sizeId: 123,
         count: state.count + 1
       }
   }

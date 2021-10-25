@@ -28,9 +28,9 @@ export const Quantity = () => {
   }, [cart.count])
 
   const handleQuantity = change => {
-    if (change == 'decreaseQuantity' && cart.quantity > 1) {
+    if (change === 'decreaseQuantity' && cart.quantity > 1) {
       dispatch({ type: change })
-    } else if (change == 'increaseQuantity' && cart.quantity < totalQuantity) {
+    } else if (change === 'increaseQuantity' && cart.quantity < totalQuantity) {
       dispatch({ type: change })
     }
   }

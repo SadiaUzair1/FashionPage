@@ -8,6 +8,7 @@ export const ChatBox = () => {
   const handleChat = () => {
     dispatch({ type: 'chat', payload: chat })
   }
+
   return (
     <div>
       <form>

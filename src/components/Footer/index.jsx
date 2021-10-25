@@ -10,8 +10,8 @@ export const Footer = () => (
       </Link>
     </Div>
     <Nav>
-      <Main1> For Contact</Main1>
-      <Main1> example@example.com</Main1>
+      <Main1> For Contact </Main1>
+      <Main1> example@example.com </Main1>
     </Nav>
   </div>
 )

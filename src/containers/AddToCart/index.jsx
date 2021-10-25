@@ -7,10 +7,9 @@ export const AddToBag = () => {
   const cart = useSelector(state => state.cartReducer)
 
   const handleCart = () => {
+    const actions = ['add', 'reset', 'decreaseItemQuantity']
     if (cart.quantity > 0) {
-      dispatch({ type: 'add', payload: cart })
-      dispatch({ type: 'reset' })
-      dispatch({ type: 'decreaseItemQuantity', payload: cart })
+      actions.map(action => dispatch({ type: action, payload: cart }))
     }
   }
 

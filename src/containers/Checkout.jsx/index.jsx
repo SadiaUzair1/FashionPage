@@ -11,9 +11,9 @@ export const Checkout = () => {
 
   useEffect(() => {
     setTotal((total = 0))
-    for (let i = 0; i < price.cart.length; i++) {
-      setTotal((total = total + (price.price * price.cart[i].quantity) / 100))
-    }
+    price.cart.map(cart => {
+      setTotal((total = total + (price.price * cart.quantity) / 100))
+    })
   }, [price.cart])
 
   const handleCheckout = () => {
