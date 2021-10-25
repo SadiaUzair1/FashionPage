@@ -1,17 +1,15 @@
-import { CartNavBar } from 'components'
 import { BagItems, Checkout } from 'containers'
-import { Div, Main } from './styleComponents'
+import { CartNavBar } from 'components'
+import { Div, Main } from './style'
 
-export const Bag = () => {
-  return (
-    <div>
-      <CartNavBar />
-      <Div>
-        <Main>
-          <BagItems />
-        </Main>
-        <Checkout />
-      </Div>
-    </div>
-  )
-}
+export const Bag = () => (
+  <div>
+    <CartNavBar />
+    <Div>
+      <Main>
+        <BagItems />
+      </Main>
+      <Checkout />
+    </Div>
+  </div>
+)

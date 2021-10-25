@@ -1,7 +1,6 @@
 import { product } from './initialStates'
 
 export const itemReducer = (state = product, action) => {
-  console.log(action.payload)
   switch (action.type) {
     case 'image':
       return {

@@ -1,13 +1,14 @@
 import { useSelector } from 'react-redux'
 
 export const ChatMessages = () => {
-  const chat = useSelector(state => state.chatReducer)
+  const chats = useSelector(state => state.chatReducer.chat)
+
   return (
     <div>
-      {Array.from({ length: chat.chat.length }, (v, i) => (
+      {chats.map((chat, i) => (
         <div key={i}>
           <p>
-            {'.'} {chat.chat[i].chat}
+            {'.'} {chat.chat}
           </p>
         </div>
       ))}

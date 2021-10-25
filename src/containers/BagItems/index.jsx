@@ -1,7 +1,7 @@
-// import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { Div } from './styleComponents'
+import { Div } from './style'
+
 export const BagItems = () => {
   const bagItems = useSelector(state => state.itemReducer)
   const dispatch = useDispatch()

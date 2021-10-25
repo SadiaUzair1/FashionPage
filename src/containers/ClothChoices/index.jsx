@@ -10,14 +10,14 @@ export const ClothChoices = () => {
 
   return (
     <div>
-      {Array.from({ length: images.length }, (v, i) => (
+      {images.map((image, i) => (
         <div key={i}>
           <input
             onClick={() => {
-              handleImageChoice(images[i].order)
+              handleImageChoice(image.order)
             }}
             type={'image'}
-            src={images[i].url}
+            src={image.url}
             height={70}
           />
         </div>

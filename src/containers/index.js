@@ -1,4 +1,5 @@
 export { AddToBag } from 'containers/AddToCart'
+export { Bag } from 'containers/Bag'
 export { BagItems } from 'containers/BagItems'
 export { Checkout } from 'containers/Checkout.jsx'
 export { ChatBox } from 'containers/ChatBox'

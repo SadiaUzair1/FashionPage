@@ -10,7 +10,7 @@ export const ClothImage = () => {
   }, [])
 
   return (
-    <div className={'ml-5'}>
+    <div>
       <img src={selectedCloth.type} width={550} height={700} />
     </div>
   )

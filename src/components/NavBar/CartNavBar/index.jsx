@@ -1,4 +1,4 @@
-import { Main3, Main4 } from '../styleComponent'
+import { Main3, Main4 } from '../style'
 
 export const CartNavBar = () => (
   <div>

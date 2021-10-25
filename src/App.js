@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
+import { Bag, ChatRoom, MainClothAndChoices } from './containers'
 import { Footer, NavBar } from './components'
-import { ChatRoom, MainClothAndChoices } from './containers'
+
 import './App.css'
-import { Bag } from 'containers/Bag'
 
 const App = () => {
   return (

@@ -1,6 +1,7 @@
 import { chat } from './initialStates'
 
 export const chatReducer = (state = chat, action) => {
+  console.log('reducer', state, action)
   switch (action.type) {
     case 'chat':
       return {

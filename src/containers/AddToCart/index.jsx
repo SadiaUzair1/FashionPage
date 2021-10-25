@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 
-import { Button } from './styleComponents.jsx'
+import { Button } from './style'
 
 export const AddToBag = () => {
   const dispatch = useDispatch()

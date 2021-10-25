@@ -3,7 +3,6 @@ import { cartObject } from './initialStates'
 export const cartReducer = (state = cartObject, action) => {
   switch (action.type) {
     case 'size':
-      console.log('state', state, 'payload', action.payload, 'type', action.type)
       return {
         ...state,
         sizeId: action.payload,

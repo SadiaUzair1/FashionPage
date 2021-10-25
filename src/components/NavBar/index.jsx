@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-import { Div, Main, Main1, Main2, Nav, Nav1, StyledLink } from './styleComponent'
+import { Div, Main, Main1, Main2, Nav, Nav1, StyledLink } from './style'
 
 export const NavBar = () => (
   <Div>

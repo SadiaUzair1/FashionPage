@@ -1,4 +1,4 @@
-import { Main3 } from '../styleComponent'
+import { Main3 } from '../style'
 
 export const ChatBoxNavBar = () => (
   <div>

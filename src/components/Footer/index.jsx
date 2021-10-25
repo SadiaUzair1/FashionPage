@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-import { Div, Main1, Nav } from './styleComponents'
+import { Div, Main1, Nav } from './style'
 
 export const Footer = () => (
   <div>

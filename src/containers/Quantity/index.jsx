@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { Button, Div } from './styleComponents'
+import { Button, Div } from './style'
 
 export const Quantity = () => {
   const clothQuantity = useSelector(state => state.itemReducer)

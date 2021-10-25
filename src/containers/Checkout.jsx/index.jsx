@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { Button } from './styleComponents.jsx'
+import { Button } from './style'
 
 export const Checkout = () => {
   const price = useSelector(state => state.itemReducer)
