@@ -25,6 +25,7 @@ export const Colors = () => {
   return (
     <div>
       <h3>SELECT A COLOR</h3>
+      {console.log('colors', states[index])}
       <Div>
         {states[index].colors.map((color, i) => (
           <div key={i}>

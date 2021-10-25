@@ -11,15 +11,9 @@ const App = () => (
       <NavBar />
     </div>
     <Switch>
-      <Route path={'/bag'}>
-        <Bag />
-      </Route>
-      <Route path={'/chat'}>
-        <ChatRoom />
-      </Route>
-      <Route path={'/'}>
-        <MainClothAndChoices />
-      </Route>
+      <Route path={'/bag'} component={Bag}></Route>
+      <Route path={'/chat'} component={ChatRoom}></Route>
+      <Route path={'/'} component={MainClothAndChoices}></Route>
     </Switch>
     <Footer />
   </Router>
