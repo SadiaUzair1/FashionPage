@@ -37,16 +37,14 @@ export const Quantity = () => {
 
   return (
     <div>
-      <div>
-        <h3>QUANTITY</h3>
-        <Div>
-          <Button onClick={() => handleQuantity('decreaseQuantity')}> - </Button>
-          <p>{cart.quantity}</p>
-          <Button onClick={() => handleQuantity('increaseQuantity')}> + </Button>
-          <p> Available Quantity: {totalQuantity}</p>
-        </Div>
-        <hr />
-      </div>
+      <h3>QUANTITY</h3>
+      <Div>
+        <Button onClick={() => handleQuantity('decreaseQuantity')}> - </Button>
+        <p>{cart.quantity}</p>
+        <Button onClick={() => handleQuantity('increaseQuantity')}> + </Button>
+        <p> Available Quantity: {totalQuantity}</p>
+      </Div>
+      <hr />
     </div>
   )
 }
