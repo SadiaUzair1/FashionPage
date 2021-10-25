@@ -12,7 +12,7 @@ export const Colors = () => {
 
   useEffect(() => {
     states.map((size, i) => {
-      if (selectedColors.sizeId == size.id) {
+      if (selectedColors.sizeId === size.id) {
         setIndex((index = i))
       }
     })
