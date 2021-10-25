@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-import { Div, Main1, Nav } from './style'
+import { Div, Main, Nav } from './style'
 
 export const Footer = () => (
   <div>
@@ -10,8 +10,8 @@ export const Footer = () => (
       </Link>
     </Div>
     <Nav>
-      <Main1> For Contact </Main1>
-      <Main1> example@example.com </Main1>
+      <Main> For Contact </Main>
+      <Main> example@example.com </Main>
     </Nav>
   </div>
 )

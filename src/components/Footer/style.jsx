@@ -6,15 +6,12 @@ export const Main = styled.main`
   }
   border: 2px;
   border-radius: 2px;
-  font-size: 1em;
-  margin: 1em;
-  padding: 0.25em 2em;
-  width: 100%;
-`
-export const Main1 = styled(Main)`
   display: flex-block;
+  font-size: 1em;
   margin-right: 2em;
   margin-top: 5em;
+  padding: 0.25em 2em;
+  width: 100%;
 `
 
 export const Nav = styled.nav`

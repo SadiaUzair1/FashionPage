@@ -1,24 +1,24 @@
-import { Link } from 'react-router-dom'
-
-import { Div, Main, Main1, Main2, Nav, Nav1, StyledLink } from './style'
+import { Div, Main, Centered, GrayHoverLink, Nav, GrayBackground, StyledLink } from './style'
 
 export const NavBar = () => (
   <Div>
-    <Nav1 className={'Navbar navbar-light d-flex justify-content-between'}>
+    <GrayBackground className={'Navbar navbar-light d-flex justify-content-between'}>
       <Main>Daily Fashion</Main>
       <Main>FREE SHIPPING</Main>
-      <Main2>
-        <Link to={'/bag'}>
+      <Main>
+        <GrayHoverLink to={'/bag'}>
           <img src={'images/bag.png'} height={25} />
-        </Link>
-      </Main2>
-    </Nav1>
+        </GrayHoverLink>
+      </Main>
+    </GrayBackground>
     <Nav>
-      <Main1>
+      <Centered>
         <StyledLink to={'/'}>Today Product</StyledLink>
-      </Main1>
+      </Centered>
       <h3>DAILY FASHION</h3>
-      <Main1>CONTACT US</Main1>
+      <Centered>
+        <StyledLink to={'/'}>CONTACT US</StyledLink>
+      </Centered>
     </Nav>
   </Div>
 )

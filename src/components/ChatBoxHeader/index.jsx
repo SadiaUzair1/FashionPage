@@ -1,11 +1,11 @@
-import { Main3 } from '../style'
+import { Main } from './style'
 
-export const ChatBoxNavBar = () => (
+export const ChatBoxHeader = () => (
   <div>
     <nav className={'Navbar navbar-light d-flex justify-content-between'}>
-      <Main3>
+      <Main>
         <h1>HOW CAN WE HELP YOU?</h1>
-      </Main3>
+      </Main>
     </nav>
     <hr />
   </div>

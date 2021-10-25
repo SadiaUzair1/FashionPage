@@ -1,9 +1,9 @@
 import { ChatBox, ChatMessages } from 'containers'
-import { ChatBoxNavBar } from 'components'
+import { ChatBoxHeader } from 'components'
 
 export const ChatRoom = () => (
   <div>
-    <ChatBoxNavBar />
+    <ChatBoxHeader />
     <ChatMessages />
     <ChatBox />
   </div>
