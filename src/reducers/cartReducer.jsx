@@ -16,14 +16,14 @@ export const cartReducer = (state = cartObject, action) => {
         count: state.count + 1
       }
 
-    case '+':
+    case 'increaseQuantity':
       return {
         ...state,
         quantity: state.quantity + 1,
         count: state.count + 1
       }
 
-    case '-':
+    case 'decreaseQuantity':
       return {
         ...state,
         quantity: state.quantity - 1,

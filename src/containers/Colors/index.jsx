@@ -12,7 +12,6 @@ export const Colors = () => {
 
   useEffect(() => {
     states.map((size, i) => {
-      console.log(size)
       if (selectedColors.sizeId == size.id) {
         setIndex((index = i))
       }
