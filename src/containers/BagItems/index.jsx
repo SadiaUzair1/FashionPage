@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 
-import { Div } from './style'
+import { Centered, Div, Img, Input } from './style'
 
 export const BagItems = () => {
   const bagItems = useSelector(state => state.itemReducer)
@@ -14,14 +14,22 @@ export const BagItems = () => {
     <div className={'d-inline-flex'}>
       {bagItems.cart.map((cart, i) => (
         <div key={i}>
+          <Input
+            onClick={() => {
+              handleCart(cart.sizeId)
+            }}
+            type={'image'}
+            src={'/images/cross.png'}
+            height={40}
+          />
           <Div>
-            <img src={bagItems.images[0].url} width={120} height={120} />
+            <Img src={bagItems.images[0].url} width={150} height={180} />
             <div>
-              <h4>{bagItems.name}</h4>
-              <main>
-                {'price: '} {bagItems.currency.symbol} {''} {bagItems.price / 100} {''}
+              <Centered>
+                {bagItems.currency.symbol} {''} {bagItems.price / 100} {''}
                 {bagItems.currency.title}
-              </main>
+              </Centered>
+              <h4>{bagItems.name}</h4>
               <p>
                 {'Quantity'} {cart.quantity}
               </p>
@@ -29,14 +37,6 @@ export const BagItems = () => {
                 {'Color'} {cart.colorId}
               </p>
             </div>
-            <input
-              onClick={() => {
-                handleCart(cart.sizeId)
-              }}
-              type={'image'}
-              src={'/images/cross.png'}
-              height={40}
-            />
           </Div>
           <hr />
         </div>
