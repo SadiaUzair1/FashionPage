@@ -1,4 +1,4 @@
-import { Div, Main, Centered, GrayHoverLink, Nav, GrayBackground, StyledLink } from './style'
+import { Centered, Div, GrayBackground, GrayHoverLink, Main, Nav, StyledLink } from './style'
 
 export const NavBar = () => (
   <Div>

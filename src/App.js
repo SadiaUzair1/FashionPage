@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-import { Bag, ChatRoom, MainClothAndChoices } from './containers'
+import { Bag, ChatMessages, MainClothAndChoices } from './containers'
 import { Footer, NavBar } from './components'
 
 import './App.css'
@@ -12,9 +12,9 @@ const App = () => (
     </div>
     <Switch>
       <Route path={'/bag'} component={Bag}></Route>
-      <Route path={'/chat'} component={ChatRoom}></Route>
       <Route path={'/'} component={MainClothAndChoices}></Route>
     </Switch>
+    <ChatMessages />
     <Footer />
   </Router>
 )

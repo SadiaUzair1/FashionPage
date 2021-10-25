@@ -9,7 +9,6 @@ export const itemReducer = (state = product, action) => {
       }
 
     case 'decreaseItemQuantity':
-      console.log(state)
       return {
         ...state,
         sizes: [
