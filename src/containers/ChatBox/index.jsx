@@ -6,7 +6,6 @@ export const ChatBox = () => {
   let [chat, setChat] = useState('')
 
   const handleChat = () => {
-    console.log('chatbox')
     dispatch({ type: 'chat', payload: chat })
   }
   return (

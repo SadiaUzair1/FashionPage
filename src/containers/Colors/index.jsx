@@ -11,11 +11,12 @@ export const Colors = () => {
   let [index, setIndex] = useState(0)
 
   useEffect(() => {
-    for (let i = 0; i < states.length; i++) {
-      if (selectedColors.sizeId == states[i].id) {
+    states.map((size, i) => {
+      console.log(size)
+      if (selectedColors.sizeId == size.id) {
         setIndex((index = i))
       }
-    }
+    })
   }, [selectedColors.count])
 
   const handleColor = colorId => {
@@ -25,11 +26,11 @@ export const Colors = () => {
   return (
     <div>
       <h3>SELECT A COLOR</h3>
-      <Div className={'d-inline-flex'}>
-        {Array.from({ length: states[index].colors.length }, (v, i) => (
+      <Div>
+        {states[index].colors.map((color, i) => (
           <div key={i}>
             <Button onClick={() => handleColor(i)} className={'text-white m-2'} key={i}>
-              {states[index].colors[i].name}
+              {color.name}
             </Button>
           </div>
         ))}
