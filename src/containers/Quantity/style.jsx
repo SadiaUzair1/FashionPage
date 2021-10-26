@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Button = styled.button`
   &:hover {
-    background: #d3d3d3;
+    background: #db7093;
   }
   font-size: 1em;
   font: text-center;
@@ -11,4 +11,12 @@ export const Button = styled.button`
 `
 export const Div = styled.div`
   display: inline-flex;
+  width: 100%;
+`
+export const P = styled.p`
+  border: 2px;
+  border-bottom: 4px
+  border-radius: 2px;
+  margin-left: 2%;
+  margin-right: 2%;
 `

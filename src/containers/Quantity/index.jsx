@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { Button, Div } from './style'
+import { Button, Div, P } from './style'
 
 export const Quantity = () => {
   const itemSizes = useSelector(state => state.itemReducer.sizes)
@@ -32,6 +32,8 @@ export const Quantity = () => {
       dispatch({ type: change })
     } else if (change === 'increaseQuantity' && cart.quantity < totalQuantity) {
       dispatch({ type: change })
+    } else {
+      alert('Select atleast one')
     }
   }
 
@@ -40,7 +42,7 @@ export const Quantity = () => {
       <h3>QUANTITY</h3>
       <Div>
         <Button onClick={() => handleQuantity('decreaseQuantity')}> - </Button>
-        <p>{cart.quantity}</p>
+        <P>{cart.quantity}</P>
         <Button onClick={() => handleQuantity('increaseQuantity')}> + </Button>
         <p> Available Quantity: {totalQuantity}</p>
       </Div>

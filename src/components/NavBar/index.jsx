@@ -11,6 +11,7 @@ export const NavBar = () => (
         </GrayHoverLink>
       </Main>
     </GrayBackground>
+
     <Nav>
       <Centered>
         <StyledLink to={'/'}>Today Product</StyledLink>

@@ -72,6 +72,7 @@ export const product = {
     title: 'USD'
   }
 }
+
 export const cartObject = {
   quantity: 1,
   colorId: '',
