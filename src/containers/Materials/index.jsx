@@ -1,13 +1,13 @@
 import { useSelector } from 'react-redux'
 
 export const Materials = () => {
-  const clothMaterial = useSelector(state => state.clothReducer)
+  const clothMaterial = useSelector(state => state.itemReducer.materials)
 
   return (
     <div>
-      <h2>MATERIAL</h2>
-      {Array.from({ length: clothMaterial.materials.length }, (v, i) => (
-        <p> {clothMaterial.materials[i].toUpperCase()}</p>
+      <h3>MATERIAL</h3>
+      {clothMaterial.map((material, i) => (
+        <p key={i}> {material.toUpperCase()}</p>
       ))}
       <hr />
     </div>

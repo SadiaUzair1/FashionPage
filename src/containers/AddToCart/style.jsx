@@ -7,10 +7,11 @@ export const Div = styled.div`
 export const Button = styled.button`
   &:hover {
     background: #d3d3d3;
+    color: black;
   }
-  color: palevioletred;
+  background-color: palevioletred;
+  color: white;
   font-size: 1em;
-  margin: 1em;
-  padding: 0.25em 2em;
-  border-radius: 50%;
+  padding: 1em 9em;
+  width: 100%;
 `
