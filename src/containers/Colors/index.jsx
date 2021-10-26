@@ -1,32 +1,40 @@
 import { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
-import { Button, Div } from './styleComponents'
+import { Button, Div } from './style'
+
 export const Colors = () => {
-  const selectedColors = useSelector(state => state.colorReducer)
+  const dispatch = useDispatch()
+  const selectedColors = useSelector(state => state.cartReducer)
+  const states = useSelector(state => state.itemReducer.sizes)
+
   let [index, setIndex] = useState(0)
 
   useEffect(() => {
-    for (let i = 0; i < selectedColors.sizes.length; i++) {
-      if (selectedColors.sizeId.type == selectedColors.sizes[i].id) {
+    states.map((size, i) => {
+      if (selectedColors.sizeId === size.id) {
         setIndex((index = i))
       }
-    }
+    })
   }, [selectedColors.count])
 
-  const handleColor = () => {
-    console.log('test')
+  const handleColor = colorId => {
+    dispatch({ type: 'color', payload: states[index].colors[colorId].name })
   }
 
   return (
-    <Div className={'d-inline-flex'}>
-      {Array.from({ length: selectedColors.sizes[index].colors.length }, (v, i) => (
-        <div key={i}>
-          <Button onClick={() => handleColor(i)} className={'text-white m-2'} key={i}>
-            {selectedColors.sizes[index].colors[i].name}
-          </Button>
-        </div>
-      ))}
-    </Div>
+    <div>
+      <h3>SELECT A COLOR</h3>
+      <Div>
+        {states[index].colors.map((color, i) => (
+          <div key={i}>
+            <Button onClick={() => handleColor(i)} className={'text-white m-2'} key={i}>
+              {color.name}
+            </Button>
+          </div>
+        ))}
+      </Div>
+      <hr />
+    </div>
   )
 }

@@ -1,14 +1,24 @@
-import { Main, Main1, Nav } from './styleComponent'
+import { Centered, Div, GrayBackground, GrayHoverLink, Main, Nav, StyledLink } from './style'
+
 export const NavBar = () => (
-  <div>
-    <Nav className={'Navbar navbar-light d-flex justify-content-between'}>
+  <Div>
+    <GrayBackground className={'Navbar navbar-light d-flex justify-content-between'}>
       <Main>Daily Fashion</Main>
       <Main>FREE SHIPPING</Main>
-    </Nav>
+      <Main>
+        <GrayHoverLink to={'/bag'}>
+          <img src={'images/bag.png'} height={25} />
+        </GrayHoverLink>
+      </Main>
+    </GrayBackground>
     <Nav>
-      <Main1>TODAY PRODUCT</Main1>
-      <Main1>DAILY FASHION</Main1>
-      <Main1>CONTACT US</Main1>
+      <Centered>
+        <StyledLink to={'/'}>Today Product</StyledLink>
+      </Centered>
+      <h3>DAILY FASHION</h3>
+      <Centered>
+        <StyledLink to={'/'}>CONTACT US</StyledLink>
+      </Centered>
     </Nav>
-  </div>
+  </Div>
 )

@@ -40,7 +40,6 @@ export const product = {
   ],
   colors: ['black', 'red', 'orange', 'blue'],
   name: 'The Special Pantsuit',
-  count: 0,
   description:
     'This is the coolest pantsuit you"ve ever seen. Fits like a dream. Wear this everywhere, and nowhere.',
   bullets: [
@@ -72,4 +71,10 @@ export const product = {
     symbol: '$',
     title: 'USD'
   }
+}
+export const cartObject = {
+  quantity: 1,
+  colorId: '',
+  sizeId: 123,
+  count: 0
 }

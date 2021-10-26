@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'
 
-import { clothReducer } from './clothReducer'
-import { colorReducer } from './colorReducer'
+import { itemReducer } from './itemReducer'
+import { cartReducer } from './cartReducer'
 
 export default combineReducers({
-  clothReducer: clothReducer,
-  colorReducer: colorReducer
+  itemReducer: itemReducer,
+  cartReducer: cartReducer
 })
