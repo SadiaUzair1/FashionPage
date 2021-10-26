@@ -7,18 +7,21 @@ export const itemReducer = (state = product, action) => {
         ...state,
         type: product.images[action.payload].url
       }
-
     case 'decreaseItemQuantity':
       return {
         ...state,
-        sizes: [
-          ...state.sizes,
-          (state.sizes[state.sizes.findIndex(size => size.id === action.payload.sizeId)].colors[
-            state.sizes[
-              state.sizes.findIndex(size => size.id === action.payload.sizeId)
-            ].colors.findIndex(color => color.name === action.payload.colorId)
-          ].quantity -= action.payload.quantity)
-        ]
+        sizes: state.sizes.map(el =>
+          el.id === action.payload.sizeId
+            ? {
+                ...el,
+                colors: el.colors.map(el1 =>
+                  el1.name === action.payload.colorId
+                    ? { ...el1, quantity: el1.quantity - action.payload.quantity }
+                    : el1
+                )
+              }
+            : el
+        )
       }
 
     case 'add':
