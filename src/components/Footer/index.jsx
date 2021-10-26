@@ -1,8 +1,10 @@
-import { Main1, Nav } from './styleComponents'
+import { Main, Nav } from './style'
+
 export const Footer = () => (
   <div>
     <Nav>
-      <Main1></Main1>
+      <Main> For Contact </Main>
+      <Main> example@example.com </Main>
     </Nav>
   </div>
 )

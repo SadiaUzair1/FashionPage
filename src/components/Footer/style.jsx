@@ -4,19 +4,14 @@ export const Main = styled.main`
   &:hover {
     background: #faf9f6;
   }
-  font-size: 1em;
-  margin: 1em;
-  padding: 0.25em 2em;
   border: 2px;
   border-radius: 2px;
-  width: 100%;
-`
-export const Main1 = styled(Main)`
-  &:hover {
-    background: #d3d3d3;
-  }
+  display: flex-block;
+  font-size: 1em;
   margin-right: 2em;
   margin-top: 5em;
+  padding: 0.25em 2em;
+  width: 100%;
 `
 
 export const Nav = styled.nav`
