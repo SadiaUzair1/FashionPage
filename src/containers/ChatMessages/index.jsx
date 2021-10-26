@@ -1,16 +1,22 @@
-import { useSelector } from 'react-redux'
+import { Launcher } from 'react-chat-window'
+import { useState } from 'react'
 
 export const ChatMessages = () => {
-  const chat = useSelector(state => state.chatReducer)
+  const [messageList, setMessage] = useState([])
+  const _onMessageWasSent = messageList1 => {
+    setMessage([...messageList, messageList1])
+  }
+
   return (
     <div>
-      {Array.from({ length: chat.chat.length }, (v, i) => (
-        <div key={i}>
-          <p>
-            {'.'} {chat.chat[i].chat}
-          </p>
-        </div>
-      ))}
+      <Launcher
+        agentProfile={{
+          teamName: 'How can we help you?'
+        }}
+        onMessageWasSent={_onMessageWasSent.bind(messageList)}
+        messageList={messageList}
+        showEmoji
+      />
     </div>
   )
 }
