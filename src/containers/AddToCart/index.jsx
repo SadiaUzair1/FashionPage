@@ -1,3 +1,4 @@
+import { setUpdatedValue } from 'helpers'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { Button } from './style'
@@ -10,9 +11,7 @@ export const AddToBag = () => {
   const handleCart = () => {
     const actions = ['add', 'reset', 'decreaseItemQuantity']
 
-    let updatedValue = items.findIndex(
-      size => size.sizeId === cart.sizeId && size.colorId === cart.colorId
-    )
+    let updatedValue = setUpdatedValue(items, cart)
 
     if (updatedValue === -1 && cart.quantity > 0) {
       actions.map(action => dispatch({ type: action, payload: cart }))

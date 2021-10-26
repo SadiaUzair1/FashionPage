@@ -9,7 +9,7 @@ export const ItemDescription = () => {
       {description.bullets.map((bullet, i) => (
         <div key={i}>
           <p>
-            {'-'} {bullet}
+            <li> {bullet} </li>
           </p>
         </div>
       ))}

@@ -1,3 +1,4 @@
+import { CalculateTotalPrice } from 'helpers'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -9,8 +10,7 @@ export const Checkout = () => {
   const price = useSelector(state => state.itemReducer)
 
   useEffect(() => {
-    let prices = price.cart.map(cart => (price.price * cart.quantity) / 10)
-    setTotal(prices.length == 0 ? 0 : prices.reduce((a, b) => a + b))
+    setTotal(CalculateTotalPrice(price))
   }, [price.cart])
 
   const handleCheckout = () => {

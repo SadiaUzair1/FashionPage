@@ -1,7 +1,7 @@
 export { AddToBag } from 'containers/AddToCart'
 export { Bag } from 'containers/Bag'
 export { BagItems } from 'containers/BagItems'
-export { Checkout } from 'containers/Checkout.jsx'
+export { Checkout } from 'containers/Checkout/index.jsx'
 export { ChatMessages } from 'containers/ChatMessages'
 export { ClothChoices } from 'containers/ClothChoices'
 export { ClothImage } from 'containers/ClothImage'

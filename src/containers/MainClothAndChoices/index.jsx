@@ -1,14 +1,14 @@
 import { ClothChoices, ClothImage, ItemFeatures } from 'containers'
-import { Div, Main, Main1 } from './style'
+import { Div, Left, Center } from './style'
 
 export const MainClothAndChoices = () => (
   <Div>
-    <Main>
+    <Left>
       <ClothChoices />
-    </Main>
-    <Main1>
+    </Left>
+    <Center>
       <ClothImage />
-    </Main1>
+    </Center>
     <ItemFeatures />
   </Div>
 )

@@ -14,7 +14,7 @@ export const itemReducer = (state = product, action) => {
 
     case 'decreaseItemQuantity':
       size = sizes.find(size => size.id === action.payload.sizeId)
-      color = size.colors.find(color => color.name === action.payload.colorId)
+      color = [...size.colors].find(color => color.name === action.payload.colorId)
       color.quantity -= action.payload.quantity
 
       return {

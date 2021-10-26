@@ -1,3 +1,4 @@
+import { calculatePrice, crossImagePath, getItemSizeName, imageType } from 'helpers'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { Centered, Div, Img, Input } from './style'
@@ -11,31 +12,29 @@ export const BagItems = () => {
   }
 
   return (
-    <div className={'d-inline-flex'}>
+    <div>
       {bagItems.cart.map((cart, i) => (
         <div key={i}>
           <Div>
             <Img src={bagItems.images[0].url} width={150} height={180} />
             <div>
               <Centered>
-                {bagItems.currency.symbol} {''} {bagItems.price / 100} {''}
-                {bagItems.currency.title}
+                {`${bagItems.currency.symbol}  ${calculatePrice(bagItems.price)} ${
+                  bagItems.currency.title
+                }`}
                 <Input
                   onClick={() => {
                     handleCart(cart.sizeId)
                   }}
-                  type={'image'}
-                  src={'/images/cross.png'}
+                  type={imageType}
+                  src={crossImagePath}
                   height={40}
                 />
               </Centered>
               <h4>{bagItems.name}</h4>
-              <p>
-                {'Quantity:'} {cart.quantity}
-              </p>
-              <p>
-                {'Color'} {cart.colorId}
-              </p>
+              <p>{`Quantity: ${cart.quantity}`}</p>
+              <p>{`Color: ${cart.colorId.toUpperCase()}`}</p>
+              <p>{getItemSizeName(bagItems, cart)}</p>
             </div>
           </Div>
           <hr />

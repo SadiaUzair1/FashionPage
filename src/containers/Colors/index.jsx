@@ -24,7 +24,7 @@ export const Colors = () => {
         {states[index].colors.map((color, i) => (
           <div key={i}>
             <Button onClick={() => handleColor(i)} key={i}>
-              {color.name}
+              {color.name.toUpperCase()}
             </Button>
           </div>
         ))}

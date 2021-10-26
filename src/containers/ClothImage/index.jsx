@@ -1,3 +1,4 @@
+import { imageType } from 'helpers'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -6,7 +7,7 @@ export const ClothImage = () => {
   const selectedCloth = useSelector(state => state.itemReducer)
 
   useEffect(() => {
-    dispatch({ type: 'image', payload: 0 })
+    dispatch({ type: imageType, payload: 0 })
   }, [])
 
   return (

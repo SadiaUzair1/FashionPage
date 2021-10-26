@@ -11,7 +11,7 @@ export const Sizes = () => {
   }
 
   return (
-    <div className={'ml-5'}>
+    <div>
       <h3>SELECT YOUR SIZE</h3>
       {sizes.map((size, i) => (
         <Button

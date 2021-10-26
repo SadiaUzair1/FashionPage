@@ -32,7 +32,7 @@ export const Quantity = () => {
       dispatch({ type: change })
     } else if (change === 'increaseQuantity' && cart.quantity < totalQuantity) {
       dispatch({ type: change })
-    } else {
+    } else if (cart.quantity <= 1) {
       alert('Select atleast one')
     }
   }
