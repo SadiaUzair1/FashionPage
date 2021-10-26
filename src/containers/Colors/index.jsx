@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
+import { COLOR } from 'helpers'
+
 import { Button, Div } from './style'
 
 export const Colors = () => {
@@ -14,7 +16,7 @@ export const Colors = () => {
   }, [selectedColors.count])
 
   const handleColor = colorId => {
-    dispatch({ type: 'color', payload: states[index].colors[colorId].name })
+    dispatch({ type: COLOR, payload: states[index].colors[colorId].name })
   }
 
   return (

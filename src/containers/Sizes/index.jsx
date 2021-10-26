@@ -1,3 +1,4 @@
+import { SIZE } from 'helpers'
 import { useDispatch, useSelector } from 'react-redux'
 
 import Button from './style'
@@ -7,7 +8,7 @@ export const Sizes = () => {
   const dispatch = useDispatch()
 
   const handleColor = sizeId => {
-    dispatch({ type: 'size', payload: sizeId })
+    dispatch({ type: SIZE, payload: sizeId })
   }
 
   return (

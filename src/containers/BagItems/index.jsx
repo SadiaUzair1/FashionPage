@@ -1,4 +1,4 @@
-import { calculatePrice, crossImagePath, getItemSizeName, imageType } from 'helpers'
+import { calculatePrice, CROSS_IMAGE_PATH, getItemSizeName, IMAGE_TYPE, REMOVE } from 'helpers'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { Centered, Div, Img, Input } from './style'
@@ -8,7 +8,7 @@ export const BagItems = () => {
   const dispatch = useDispatch()
 
   const handleCart = id => {
-    dispatch({ type: 'remove', payload: id })
+    dispatch({ type: REMOVE, payload: id })
   }
 
   return (
@@ -26,8 +26,8 @@ export const BagItems = () => {
                   onClick={() => {
                     handleCart(cart.sizeId)
                   }}
-                  type={imageType}
-                  src={crossImagePath}
+                  type={IMAGE_TYPE}
+                  src={CROSS_IMAGE_PATH}
                   height={40}
                 />
               </Centered>

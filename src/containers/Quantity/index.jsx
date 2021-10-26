@@ -1,3 +1,4 @@
+import { DECREASE_QUANTITY, INCREASE_QUANTITY, RESET_QUANTITY } from 'helpers'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -19,11 +20,11 @@ export const Quantity = () => {
       settotalQuantity((totalQuantity = itemSizes[sizeIndex].colors[colorIndex].quantity))
     } else {
       settotalQuantity((totalQuantity = 0))
-      dispatch({ type: 'resetQuantity', payload: 0 })
+      dispatch({ type: RESET_QUANTITY, payload: 0 })
     }
 
     if (totalQuantity < cart.quantity) {
-      dispatch({ type: 'resetQuantity', payload: totalQuantity })
+      dispatch({ type: RESET_QUANTITY, payload: totalQuantity })
     }
   }, [cart.count])
 
@@ -41,9 +42,9 @@ export const Quantity = () => {
     <div>
       <h3>QUANTITY</h3>
       <Div>
-        <Button onClick={() => handleQuantity('decreaseQuantity')}> - </Button>
+        <Button onClick={() => handleQuantity(DECREASE_QUANTITY)}> - </Button>
         <P>{cart.quantity}</P>
-        <Button onClick={() => handleQuantity('increaseQuantity')}> + </Button>
+        <Button onClick={() => handleQuantity(INCREASE_QUANTITY)}> + </Button>
         <p> Available Quantity: {totalQuantity}</p>
       </Div>
       <hr />

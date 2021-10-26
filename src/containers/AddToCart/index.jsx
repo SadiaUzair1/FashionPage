@@ -1,4 +1,4 @@
-import { setUpdatedValue } from 'helpers'
+import { ADD, DECREASE_ITEM_QUANTITY, RESET, setUpdatedValue } from 'helpers'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { Button } from './style'
@@ -9,7 +9,7 @@ export const AddToBag = () => {
   const cart = useSelector(state => state.cartReducer)
 
   const handleCart = () => {
-    const actions = ['add', 'reset', 'decreaseItemQuantity']
+    const actions = [ADD, RESET, DECREASE_ITEM_QUANTITY]
 
     let updatedValue = setUpdatedValue(items, cart)
 

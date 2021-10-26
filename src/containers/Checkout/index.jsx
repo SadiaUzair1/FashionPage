@@ -1,4 +1,4 @@
-import { CalculateTotalPrice } from 'helpers'
+import { calculateTotalPrice, RESET_CART } from 'helpers'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -10,13 +10,13 @@ export const Checkout = () => {
   const price = useSelector(state => state.itemReducer)
 
   useEffect(() => {
-    setTotal(CalculateTotalPrice(price))
+    setTotal(calculateTotalPrice(price))
   }, [price.cart])
 
   const handleCheckout = () => {
     if (total !== 0) {
       alert('Thank you for shopping with us')
-      dispatch({ type: 'resetCart' })
+      dispatch({ type: RESET_CART })
     } else {
       alert('Select Item First')
     }
