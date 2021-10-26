@@ -1,31 +1,25 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Notification from 'react-notify-toast'
 
+import { Bag, ChatMessages, MainClothAndChoices } from './containers'
 import { Footer, NavBar } from './components'
-import { MainClothAndChoices } from './containers'
-import './App.css'
-import { Bag } from 'containers/Bag'
 
-const App = () => {
-  return (
-    <div>
-      <Router>
-        <div className={'App'}>
-          <NavBar />
-        </div>
-        <Switch>
-          <Route path={'/bag'}>
-            <Bag />
-          </Route>
-          <Route path={'/'}>
-            <MainClothAndChoices />
-          </Route>
-        </Switch>
-      </Router>
-      <div>
-        <Footer />
-      </div>
+import './App.css'
+
+const App = () => (
+  <Router>
+    <div className={'App'}>
+      <NavBar />
+      <Notification />
+      {/* {notify.show('hello world')} */}
     </div>
-  )
-}
+    <Switch>
+      <Route path={'/bag'} component={Bag}></Route>
+      <Route path={'/'} component={MainClothAndChoices}></Route>
+    </Switch>
+    <ChatMessages />
+    <Footer />
+  </Router>
+)
 
 export default App

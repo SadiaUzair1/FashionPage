@@ -1,27 +1,27 @@
 import { useDispatch, useSelector } from 'react-redux'
 
-import Button from './styleComponents'
+import Button from './style'
 
 export const Sizes = () => {
-  const sizesAndColor = useSelector(state => state.itemReducer)
+  const sizes = useSelector(state => state.itemReducer.sizes)
   const dispatch = useDispatch()
 
-  const handleColor = index => {
-    dispatch({ type: sizesAndColor.sizes[index].id })
+  const handleColor = sizeId => {
+    dispatch({ type: 'size', payload: sizeId })
   }
 
   return (
     <div className={'ml-5'}>
       <h3>SELECT YOUR SIZE</h3>
-      {Array.from({ length: sizesAndColor.sizes.length }, (v, i) => (
+      {sizes.map((size, i) => (
         <Button
           onClick={() => {
-            handleColor(i)
+            handleColor(size.id)
           }}
           className={'text-white m-2'}
           key={i}
         >
-          {sizesAndColor.sizes[i].abbreviation}
+          {size.abbreviation}
         </Button>
       ))}
       <hr />

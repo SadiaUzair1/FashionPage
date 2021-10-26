@@ -6,10 +6,10 @@ export const ItemDescription = () => {
   return (
     <div>
       <p>{description.description}</p>
-      {Array.from({ length: description.bullets.length }, (v, i) => (
+      {description.bullets.map((bullet, i) => (
         <div key={i}>
           <p>
-            {'-'} {description.bullets[i]}
+            {'-'} {bullet}
           </p>
         </div>
       ))}
