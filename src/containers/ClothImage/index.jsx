@@ -6,12 +6,12 @@ export const ClothImage = () => {
   const selectedCloth = useSelector(state => state.itemReducer)
 
   useEffect(() => {
-    dispatch({ type: 0 })
+    dispatch({ type: 'image', payload: 0 })
   }, [])
 
   return (
-    <div className={'ml-5'}>
-      <img src={selectedCloth.type} width={550} height={600} />
+    <div>
+      <img src={selectedCloth.type} width={550} height={700} />
     </div>
   )
 }
