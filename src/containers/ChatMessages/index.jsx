@@ -3,8 +3,8 @@ import { useState } from 'react'
 
 export const ChatMessages = () => {
   const [messageList, setMessage] = useState([])
-  const _onMessageWasSent = messageList1 => {
-    setMessage([...messageList, messageList1])
+  const onMessageWasSent = list => {
+    setMessage([...messageList, list])
   }
 
   return (
@@ -13,7 +13,7 @@ export const ChatMessages = () => {
         agentProfile={{
           teamName: 'How can we help you?'
         }}
-        onMessageWasSent={_onMessageWasSent.bind(messageList)}
+        onMessageWasSent={message => onMessageWasSent(message)}
         messageList={messageList}
         showEmoji
       />

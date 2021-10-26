@@ -4,15 +4,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Button } from './style'
 
 export const Checkout = () => {
-  const price = useSelector(state => state.itemReducer)
   const dispatch = useDispatch()
   let [total, setTotal] = useState(0)
+  const price = useSelector(state => state.itemReducer)
 
   useEffect(() => {
-    setTotal((total = 0))
-    price.cart.map(cart => {
-      setTotal((total = total + (price.price * cart.quantity) / 100))
-    })
+    let prices = price.cart.map(cart => (price.price * cart.quantity) / 10)
+    setTotal(prices.length == 0 ? 0 : prices.reduce((a, b) => a + b))
   }, [price.cart])
 
   const handleCheckout = () => {

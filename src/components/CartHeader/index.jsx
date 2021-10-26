@@ -2,7 +2,7 @@ import { Main, LeftAlign } from './style'
 
 export const CartHeader = () => (
   <div>
-    <nav className={'Navbar navbar-light d-flex justify-content-between'}>
+    <nav>
       <Main>
         <h1>Your Shopping Bag</h1>
       </Main>

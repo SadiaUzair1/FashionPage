@@ -39,9 +39,8 @@ export const cartReducer = (state = cartObject, action) => {
     case 'reset':
       return {
         ...state,
+        ...cartObject,
         quantity: 0,
-        colorId: '',
-        sizeId: 123,
         count: state.count + 1
       }
   }

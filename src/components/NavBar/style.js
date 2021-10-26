@@ -6,17 +6,17 @@ export const StyledLink = styled(Link)`
     background: #d3d3d3;
   }
   color: Black;
-  text-decoration: none;
   margin: 1%;
   position: relative;
+  text-decoration: none;
 `
 
 export const Main = styled.main`
+  border: 2px;
+  border-radius: 2%;
   font-size: 1em;
   margin: 1em;
   padding: 0.25% 2%;
-  border: 2px;
-  border-radius: 2%;
   width: 100%;
 `
 export const Centered = styled(Main)`

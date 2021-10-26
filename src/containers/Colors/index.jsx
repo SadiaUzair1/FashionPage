@@ -7,7 +7,6 @@ export const Colors = () => {
   const dispatch = useDispatch()
   const selectedColors = useSelector(state => state.cartReducer)
   const states = useSelector(state => state.itemReducer.sizes)
-
   let [index, setIndex] = useState(0)
 
   useEffect(() => {
@@ -24,7 +23,7 @@ export const Colors = () => {
       <Div>
         {states[index].colors.map((color, i) => (
           <div key={i}>
-            <Button onClick={() => handleColor(i)} className={'text-white m-2'} key={i}>
+            <Button onClick={() => handleColor(i)} key={i}>
               {color.name}
             </Button>
           </div>

@@ -18,7 +18,6 @@ export const Sizes = () => {
           onClick={() => {
             handleColor(size.id)
           }}
-          className={'text-white m-2'}
           key={i}
         >
           {size.abbreviation}
