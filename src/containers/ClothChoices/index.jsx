@@ -1,29 +1,24 @@
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 export const ClothChoices = () => {
-  const images = [
-    '/images/jumpsuit-1.jpg',
-    '/images/jumpsuit-2.jpg',
-    '/images/jumpsuit-3.jpg',
-    '/images/jumpsuit-4.jpg',
-    '/images/jumpsuit-5.jpg'
-  ]
+  const images = useSelector(state => state.itemReducer.images)
   const dispatch = useDispatch()
-  const handleImageChoice = type => {
-    dispatch({ type: type })
+
+  const handleImageChoice = order => {
+    dispatch({ type: 'image', payload: order })
   }
 
   return (
-    <div className={'mt-5 mr-5'}>
-      {Array.from({ length: 5 }, (v, i) => (
+    <div>
+      {images.map((image, i) => (
         <div key={i}>
           <input
             onClick={() => {
-              handleImageChoice(i)
+              handleImageChoice(image.order)
             }}
             type={'image'}
-            src={images[i]}
-            height={50}
+            src={image.url}
+            height={70}
           />
         </div>
       ))}

@@ -1,13 +1,14 @@
-import { ClothChoices, ClothImage } from 'containers'
-import { ItemNameAndPrice } from 'containers/ItemNameAndPrice'
-import { Div } from './styleComponents'
+import { ClothChoices, ClothImage, ItemFeatures } from 'containers'
+import { Div, Main, Main1 } from './style'
 
-export const MainClothAndChoices = () => {
-  return (
-    <Div d-print-inline-block>
+export const MainClothAndChoices = () => (
+  <Div>
+    <Main>
       <ClothChoices />
+    </Main>
+    <Main1>
       <ClothImage />
-      <ItemNameAndPrice />
-    </Div>
-  )
-}
+    </Main1>
+    <ItemFeatures />
+  </Div>
+)
