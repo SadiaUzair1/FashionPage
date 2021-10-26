@@ -11,11 +11,7 @@ export const Colors = () => {
   let [index, setIndex] = useState(0)
 
   useEffect(() => {
-    states.map((size, i) => {
-      if (selectedColors.sizeId === size.id) {
-        setIndex((index = i))
-      }
-    })
+    setIndex((index = states.findIndex(size => size.id === selectedColors.sizeId)))
   }, [selectedColors.count])
 
   const handleColor = colorId => {

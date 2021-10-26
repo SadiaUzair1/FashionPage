@@ -6,7 +6,7 @@ export const Div = styled.div`
 `
 export const Button = styled.button`
   &:hover {
-    background: palevioletred;
+    background: #db7093;
   }
   border-radius: 50%;
   color: black;

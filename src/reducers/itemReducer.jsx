@@ -1,27 +1,27 @@
 import { product } from './initialStates'
 
 export const itemReducer = (state = product, action) => {
+  let sizeIndex = 0
+  let colorIndex = 0
+  let size = [...state.sizes]
+
   switch (action.type) {
     case 'image':
       return {
         ...state,
         type: product.images[action.payload].url
       }
+
     case 'decreaseItemQuantity':
+      sizeIndex = state.sizes.findIndex(size => size.id === action.payload.sizeId)
+      colorIndex = state.sizes[sizeIndex].colors.findIndex(
+        color => color.name === action.payload.colorId
+      )
+      console.log(size[sizeIndex].colors[colorIndex].quantity - action.payload.quantity)
+      size[sizeIndex].colors[colorIndex].quantity -= action.payload.quantity
       return {
         ...state,
-        sizes: state.sizes.map(el =>
-          el.id === action.payload.sizeId
-            ? {
-                ...el,
-                colors: el.colors.map(el1 =>
-                  el1.name === action.payload.colorId
-                    ? { ...el1, quantity: el1.quantity - action.payload.quantity }
-                    : el1
-                )
-              }
-            : el
-        )
+        sizes: size
       }
 
     case 'add':

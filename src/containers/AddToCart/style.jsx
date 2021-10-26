@@ -6,10 +6,10 @@ export const Div = styled.div`
 `
 export const Button = styled.button`
   &:hover {
-    background: #d3d3d3;
+    background: #ffb6c1;
     color: black;
   }
-  background-color: palevioletred;
+  background-color: #db7093;
   color: white;
   font-size: 1em;
   padding: 1em 9em;

@@ -14,24 +14,24 @@ export const BagItems = () => {
     <div className={'d-inline-flex'}>
       {bagItems.cart.map((cart, i) => (
         <div key={i}>
-          <Input
-            onClick={() => {
-              handleCart(cart.sizeId)
-            }}
-            type={'image'}
-            src={'/images/cross.png'}
-            height={40}
-          />
           <Div>
             <Img src={bagItems.images[0].url} width={150} height={180} />
             <div>
               <Centered>
                 {bagItems.currency.symbol} {''} {bagItems.price / 100} {''}
                 {bagItems.currency.title}
+                <Input
+                  onClick={() => {
+                    handleCart(cart.sizeId)
+                  }}
+                  type={'image'}
+                  src={'/images/cross.png'}
+                  height={40}
+                />
               </Centered>
               <h4>{bagItems.name}</h4>
               <p>
-                {'Quantity'} {cart.quantity}
+                {'Quantity:'} {cart.quantity}
               </p>
               <p>
                 {'Color'} {cart.colorId}
