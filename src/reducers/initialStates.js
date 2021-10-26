@@ -75,6 +75,6 @@ export const product = {
 export const cartObject = {
   quantity: 1,
   colorId: '',
-  sizeId: 0,
+  sizeId: 123,
   count: 0
 }

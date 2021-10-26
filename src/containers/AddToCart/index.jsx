@@ -1,14 +1,16 @@
 import { useDispatch, useSelector } from 'react-redux'
 
-import { Button } from './styleComponents.jsx'
+import { Button } from './style'
 
 export const AddToBag = () => {
   const dispatch = useDispatch()
   const cart = useSelector(state => state.cartReducer)
 
   const handleCart = () => {
-    dispatch({ type: 'cart', payload: cart })
-    dispatch({ type: 'reset' })
+    const actions = ['add', 'reset', 'decreaseItemQuantity']
+    if (cart.quantity > 0) {
+      actions.map(action => dispatch({ type: action, payload: cart }))
+    }
   }
 
   return (

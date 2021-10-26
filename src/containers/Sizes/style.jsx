@@ -5,10 +5,10 @@ const Button = styled.button`
     background-color: palevioletred;
     color: white;
   }
+  border-radius: 50%;
   color: black;
   font-size: 1em;
   margin: 1em;
   padding: 0.9em 2em;
-  border-radius: 50%;
 `
 export default Button

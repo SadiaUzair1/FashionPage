@@ -2,78 +2,46 @@ import { cartObject } from './initialStates'
 
 export const cartReducer = (state = cartObject, action) => {
   switch (action.type) {
-    case 123:
+    case 'size':
       return {
         ...state,
-        sizeId: action.type,
+        sizeId: action.payload,
         count: state.count + 1
       }
-    case 234:
+
+    case 'color':
       return {
         ...state,
-        sizeId: action.type,
+        colorId: action.payload,
         count: state.count + 1
       }
-    case 345:
-      return {
-        ...state,
-        sizeId: action.type,
-        count: state.count + 1
-      }
-    case 456:
-      return {
-        ...state,
-        sizeId: action.type,
-        count: state.count + 1
-      }
-    case 'red':
-      return {
-        ...state,
-        colorId: action.type,
-        count: state.count + 1
-      }
-    case 'black':
-      return {
-        ...state,
-        colorId: action.type,
-        count: state.count + 1
-      }
-    case 'orange':
-      return {
-        ...state,
-        colorId: action.type,
-        count: state.count + 1
-      }
-    case 'blue':
-      return {
-        ...state,
-        colorId: action.type,
-        count: state.count + 1
-      }
-    case '+':
+
+    case 'increaseQuantity':
       return {
         ...state,
         quantity: state.quantity + 1,
         count: state.count + 1
       }
-    case '-':
+
+    case 'decreaseQuantity':
       return {
         ...state,
         quantity: state.quantity - 1,
         count: state.count + 1
       }
+
     case 'resetQuantity':
       return {
         ...state,
-        quantity: action.payload,
-        count: state.count + 1
+        quantity: action.payload
       }
+
     case 'reset':
       return {
         ...state,
         quantity: 0,
         colorId: '',
-        sizeId: 0,
+        sizeId: 123,
         count: state.count + 1
       }
   }
