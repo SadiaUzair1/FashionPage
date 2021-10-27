@@ -16,7 +16,6 @@ export const Sizes = () => {
 
   return (
     <div>
-      {console.log(cart)}
       <h3>SELECT YOUR SIZE</h3>
       {sizes.map((size, i) => {
         let selectedButton = false

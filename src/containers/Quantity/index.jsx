@@ -1,4 +1,9 @@
-import { DECREASE_QUANTITY, INCREASE_QUANTITY, RESET_QUANTITY } from 'helpers'
+import {
+  calculateTotalQuantity,
+  DECREASE_QUANTITY,
+  INCREASE_QUANTITY,
+  RESET_QUANTITY
+} from 'helpers'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -13,13 +18,14 @@ export const Quantity = () => {
   let colorIndex = 0
 
   useEffect(() => {
+    let total = calculateTotalQuantity(itemSizes, cart)
     sizeIndex = itemSizes.findIndex(size => size.id === cart.sizeId)
     colorIndex = itemSizes[sizeIndex].colors.findIndex(color => color.name === cart.colorId)
 
     if (sizeIndex > -1 && colorIndex > -1) {
       settotalQuantity((totalQuantity = itemSizes[sizeIndex].colors[colorIndex].quantity))
     } else {
-      settotalQuantity((totalQuantity = 0))
+      settotalQuantity((totalQuantity = total))
       dispatch({ type: RESET_QUANTITY, payload: 0 })
     }
 
@@ -29,12 +35,17 @@ export const Quantity = () => {
   }, [cart.count])
 
   const handleQuantity = change => {
+    console.log('cart', cart)
     if (change === 'decreaseQuantity' && cart.quantity > 1) {
       dispatch({ type: change })
-    } else if (change === 'increaseQuantity' && cart.quantity < totalQuantity) {
+    } else if (
+      change === 'increaseQuantity' &&
+      cart.quantity < totalQuantity &&
+      cart.colorId !== ''
+    ) {
       dispatch({ type: change })
-    } else if (cart.quantity <= 1) {
-      alert('Select atleast one')
+    } else if (cart.quantity <= 1 || cart.colorId === '') {
+      alert('Size or color missing')
     }
   }
 

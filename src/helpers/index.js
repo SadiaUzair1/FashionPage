@@ -19,10 +19,15 @@ export const calculateTotalPrice = priceList => {
   return prices.length == 0 ? 0 : prices.reduce((a, b) => a + b)
 }
 
+export const calculateTotalQuantity = (itemSizes, cartItem) => {
+  let selectedSize = itemSizes.find(size => size.id === cartItem.sizeId)
+  return [...selectedSize.colors].reduce((a, b) => a.quantity + b.quantity)
+}
+
 export const getItemSizeName = (bagItems, cart) =>
   bagItems.sizes.find(size => size.id === cart.sizeId).name
 
-export const renderTotalPrice = (currency, totalPrice) =>
+export const totalPrice = (currency, totalPrice) =>
   `${currency.currency.symbol} ${totalPrice} ${currency.currency.title}`
 
 export const renderPrice = bagItems =>

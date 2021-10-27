@@ -2,6 +2,7 @@ import * as actionTypes from 'helpers'
 import { product } from './initialStates'
 
 export const itemReducer = (state = product, action) => {
+  console.log('state', state)
   let size = 0
   let color = 0
   let sizes = [...state.sizes]

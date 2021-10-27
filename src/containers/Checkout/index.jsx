@@ -1,4 +1,4 @@
-import { calculateTotalPrice, renderTotalPrice, RESET_CART } from 'helpers'
+import { calculateTotalPrice, totalPrice, RESET_CART } from 'helpers'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -24,7 +24,7 @@ export const Checkout = () => {
 
   return (
     <div>
-      <h3> {renderTotalPrice(price, total)} </h3>
+      <h3> {totalPrice(price, total)} </h3>
       <Button onClick={() => handleCheckout()}> CHECKOUT </Button>
     </div>
   )
