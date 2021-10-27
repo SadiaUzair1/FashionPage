@@ -23,13 +23,22 @@ export const Colors = () => {
     <div>
       <h3>SELECT A COLOR</h3>
       <Div>
-        {states[index].colors.map((color, i) => (
-          <div key={i}>
-            <Button onClick={() => handleColor(i)} key={i}>
-              {color.name.toUpperCase()}
-            </Button>
-          </div>
-        ))}
+        {states[index].colors.map((color, i) => {
+          let selectedButton = false
+          if (color.name === selectedColors.colorId) {
+            selectedButton = true
+          }
+          return (
+            <div key={i}>
+              <Button
+                color={color.name}
+                selected={selectedButton}
+                onClick={() => handleColor(i)}
+                key={i}
+              ></Button>
+            </div>
+          )
+        })}
       </Div>
       <hr />
     </div>

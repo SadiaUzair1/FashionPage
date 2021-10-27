@@ -5,12 +5,9 @@ export const Div = styled.div`
   height: 10%;
 `
 export const Button = styled.button`
-  &:hover {
-    background: #db7093;
-  }
+  background-color: ${props => props.color};
+  border-color: ${props => (props.selected ? '#00ffec' : props.color)};
   border-radius: 50%;
-  color: black;
-  font-size: 1em;
   margin: 1em;
   padding: 0.9em 1em;
 `

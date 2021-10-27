@@ -20,7 +20,7 @@ export const itemReducer = (state = product, action) => {
 
       return {
         ...state,
-        sizes: sizes
+        sizes: { ...sizes, color }
       }
 
     case actionTypes.ADD:
