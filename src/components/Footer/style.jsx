@@ -1,9 +1,6 @@
 import styled from 'styled-components'
 
 export const Main = styled.main`
-  &:hover {
-    background: #faf9f6;
-  }
   border: 2px;
   border-radius: 2px;
   display: flex-block;

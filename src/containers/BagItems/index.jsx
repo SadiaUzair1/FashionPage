@@ -7,8 +7,8 @@ export const BagItems = () => {
   const bagItems = useSelector(state => state.itemReducer)
   const dispatch = useDispatch()
 
-  const handleCart = id => {
-    dispatch({ type: REMOVE, payload: id })
+  const handleCart = cart => {
+    dispatch({ type: REMOVE, payload: cart })
   }
 
   return (
@@ -22,7 +22,7 @@ export const BagItems = () => {
                 {price(bagItems)}
                 <Input
                   onClick={() => {
-                    handleCart(cart.sizeId)
+                    handleCart(cart)
                   }}
                   type={IMAGE_TYPE}
                   src={CROSS_IMAGE_PATH}
