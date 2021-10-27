@@ -1,3 +1,4 @@
+import { IMAGE_TYPE } from 'helpers'
 import { useDispatch, useSelector } from 'react-redux'
 
 export const ClothChoices = () => {
@@ -5,7 +6,7 @@ export const ClothChoices = () => {
   const dispatch = useDispatch()
 
   const handleImageChoice = order => {
-    dispatch({ type: 'image', payload: order })
+    dispatch({ type: IMAGE_TYPE, payload: order })
   }
 
   return (
@@ -16,7 +17,7 @@ export const ClothChoices = () => {
             onClick={() => {
               handleImageChoice(image.order)
             }}
-            type={'image'}
+            type={IMAGE_TYPE}
             src={image.url}
             height={70}
           />

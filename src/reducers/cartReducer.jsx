@@ -1,42 +1,43 @@
+import * as actionTypes from 'helpers'
 import { cartObject } from './initialStates'
 
 export const cartReducer = (state = cartObject, action) => {
   switch (action.type) {
-    case 'size':
+    case actionTypes.SIZE:
       return {
         ...state,
         sizeId: action.payload,
         count: state.count + 1
       }
 
-    case 'color':
+    case actionTypes.COLOR:
       return {
         ...state,
         colorId: action.payload,
         count: state.count + 1
       }
 
-    case 'increaseQuantity':
+    case actionTypes.INCREASE_QUANTITY:
       return {
         ...state,
         quantity: state.quantity + 1,
         count: state.count + 1
       }
 
-    case 'decreaseQuantity':
+    case actionTypes.DECREASE_QUANTITY:
       return {
         ...state,
         quantity: state.quantity - 1,
         count: state.count + 1
       }
 
-    case 'resetQuantity':
+    case actionTypes.RESET_QUANTITY:
       return {
         ...state,
         quantity: action.payload
       }
 
-    case 'reset':
+    case actionTypes.RESET:
       return {
         ...state,
         ...cartObject,

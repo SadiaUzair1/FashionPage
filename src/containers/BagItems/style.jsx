@@ -15,9 +15,9 @@ export const Button = styled.button`
 `
 
 export const Centered = styled.div`
-  padding-left: 90%;
   margin-left: 80%;
   margin-right: 5%;
+  padding-left: 90%;
   width: 100%;
 `
 

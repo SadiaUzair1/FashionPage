@@ -5,10 +5,10 @@ export const Div = styled.div`
   margin: 1em;
   padding: 7em;
 `
-export const Main = styled.main`
+export const Left = styled.main`
   margin: 5em;
   padding: 7em;
 `
-export const Main1 = styled.main`
+export const Center = styled.main`
   margin-right: 5em;
 `

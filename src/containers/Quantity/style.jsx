@@ -4,6 +4,7 @@ export const Button = styled.button`
   &:hover {
     background: #db7093;
   }
+  background: #faf9f6;
   font-size: 1em;
   font: text-center;
   margin: 0.2em;

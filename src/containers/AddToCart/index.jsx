@@ -1,24 +1,19 @@
+import { ADD, DECREASE_ITEM_QUANTITY, RESET } from 'helpers'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { Button } from './style'
 
 export const AddToBag = () => {
   const dispatch = useDispatch()
-  const items = useSelector(state => state.itemReducer.cart)
   const cart = useSelector(state => state.cartReducer)
 
   const handleCart = () => {
-    const actions = ['add', 'reset', 'decreaseItemQuantity']
-
-    let updatedValue = items.findIndex(
-      size => size.sizeId === cart.sizeId && size.colorId === cart.colorId
-    )
-
-    if (updatedValue === -1 && cart.quantity > 0) {
+    const actions = [ADD, RESET, DECREASE_ITEM_QUANTITY]
+    if (cart.colorId === '') {
+      alert('Select a color first')
+    } else {
       actions.map(action => dispatch({ type: action, payload: cart }))
       alert('Added To Bag')
-    } else {
-      alert('Already In Bag')
     }
   }
 

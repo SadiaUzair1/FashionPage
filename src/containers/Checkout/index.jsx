@@ -1,6 +1,6 @@
+import { calculateTotalPrice, totalPrice, RESET_CART } from 'helpers'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-
 import { Button } from './style'
 
 export const Checkout = () => {
@@ -9,14 +9,13 @@ export const Checkout = () => {
   const price = useSelector(state => state.itemReducer)
 
   useEffect(() => {
-    let prices = price.cart.map(cart => (price.price * cart.quantity) / 10)
-    setTotal(prices.length == 0 ? 0 : prices.reduce((a, b) => a + b))
+    setTotal(calculateTotalPrice(price))
   }, [price.cart])
 
   const handleCheckout = () => {
     if (total !== 0) {
       alert('Thank you for shopping with us')
-      dispatch({ type: 'resetCart' })
+      dispatch({ type: RESET_CART })
     } else {
       alert('Select Item First')
     }
@@ -24,10 +23,7 @@ export const Checkout = () => {
 
   return (
     <div>
-      <h3>
-        {price.currency.symbol} {''} {total} {''}
-        {price.currency.title}
-      </h3>
+      <h3> {totalPrice(price, total)} </h3>
       <Button onClick={() => handleCheckout()}> CHECKOUT </Button>
     </div>
   )
