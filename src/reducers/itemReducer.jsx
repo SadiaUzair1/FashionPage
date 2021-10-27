@@ -28,7 +28,7 @@ export const itemReducer = (state = product, action) => {
 
     case actionTypes.ADD:
       sizeIndex = state.cart.findIndex(size => size.sizeId === action.payload.sizeId)
-      console.log('sizeIndex', sizeIndex)
+
       if (sizeIndex !== -1 && state.cart[sizeIndex].colorId === action.payload.colorId) {
         cart[sizeIndex].quantity += action.payload.quantity
         return {
@@ -52,11 +52,10 @@ export const itemReducer = (state = product, action) => {
     case actionTypes.REMOVE:
       return {
         ...state,
-        cart: state.cart.filter(cartItem => {
-          return (
+        cart: state.cart.filter(
+          cartItem =>
             cartItem.colorId !== action.payload.colorId || cartItem.sizeId !== action.payload.sizeId
-          )
-        })
+        )
       }
 
     case actionTypes.RESET_CART:

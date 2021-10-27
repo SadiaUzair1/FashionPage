@@ -15,6 +15,7 @@ export const RESET_CART = 'resetCart'
 export const RESET_QUANTITY = 'resetQuantity'
 export const SIZE = 'size'
 export const PINK = '#00ffec'
+export const DARK_PINK = 'db7093'
 
 export const calculatePrice = price => price / 100
 

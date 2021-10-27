@@ -24,10 +24,8 @@ export const Colors = () => {
       <h3>SELECT A COLOR</h3>
       <Div>
         {states[index].colors.map((color, i) => {
-          let selectedButton = false
-          if (color.name === selectedColors.colorId) {
-            selectedButton = true
-          }
+          let selectedButton = color.name === selectedColors.colorId ? true : false
+
           return (
             <div key={i}>
               <Button
