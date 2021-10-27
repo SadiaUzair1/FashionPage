@@ -9,8 +9,12 @@ export const AddToBag = () => {
 
   const handleCart = () => {
     const actions = [ADD, RESET, DECREASE_ITEM_QUANTITY]
-    actions.map(action => dispatch({ type: action, payload: cart }))
-    alert('Added To Bag')
+    if (cart.colorId === '') {
+      alert('Select a color first')
+    } else {
+      actions.map(action => dispatch({ type: action, payload: cart }))
+      alert('Added To Bag')
+    }
   }
 
   return (
