@@ -45,7 +45,7 @@ export const Quantity = () => {
     ) {
       dispatch({ type: change })
     } else if (cart.quantity <= 1 || cart.colorId === '') {
-      alert('Size or color missing')
+      alert(' Incorrect Quantity or Size or Color is missing')
     }
   }
 

@@ -1,4 +1,4 @@
-import { CROSS_IMAGE_PATH, getItemSizeName, IMAGE_TYPE, REMOVE, renderPrice } from 'helpers'
+import { CROSS_IMAGE_PATH, getItemSizeName, IMAGE_TYPE, REMOVE, price } from 'helpers'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { Centered, Div, Img, Input } from './style'
@@ -19,7 +19,7 @@ export const BagItems = () => {
             <Img src={bagItems.images[0].url} width={150} height={180} />
             <div>
               <Centered>
-                {renderPrice(bagItems)}
+                {price(bagItems)}
                 <Input
                   onClick={() => {
                     handleCart(cart.sizeId)

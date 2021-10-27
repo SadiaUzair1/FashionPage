@@ -2,10 +2,10 @@ import * as actionTypes from 'helpers'
 import { product } from './initialStates'
 
 export const itemReducer = (state = product, action) => {
-  console.log('state', state)
-  let size = 0
   let color = 0
+  let colors = 0
   let sizes = [...state.sizes]
+  let sizeIndex = 0
 
   switch (action.type) {
     case actionTypes.IMAGE_TYPE:
@@ -15,13 +15,14 @@ export const itemReducer = (state = product, action) => {
       }
 
     case actionTypes.DECREASE_ITEM_QUANTITY:
-      size = sizes.find(size => size.id === action.payload.sizeId)
-      color = [...size.colors].find(color => color.name === action.payload.colorId)
+      sizeIndex = sizes.findIndex(size => size.id === action.payload.sizeId)
+      colors = [...sizes[sizeIndex].colors]
+      color = colors.find(color => color.name === action.payload.colorId)
       color.quantity -= action.payload.quantity
-
+      sizes[sizeIndex].colors = colors
       return {
         ...state,
-        sizes: { ...sizes, color }
+        sizes: sizes
       }
 
     case actionTypes.ADD:

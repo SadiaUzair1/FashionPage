@@ -30,7 +30,7 @@ export const getItemSizeName = (bagItems, cart) =>
 export const totalPrice = (currency, totalPrice) =>
   `${currency.currency.symbol} ${totalPrice} ${currency.currency.title}`
 
-export const renderPrice = bagItems =>
+export const price = bagItems =>
   `${bagItems.currency.symbol}  ${calculatePrice(bagItems.price)} ${bagItems.currency.title}`
 
 export const setUpdatedValue = (items, cart) =>
