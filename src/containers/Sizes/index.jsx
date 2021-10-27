@@ -15,22 +15,17 @@ export const Sizes = () => {
   return (
     <div>
       <h3>SELECT YOUR SIZE</h3>
-      {sizes.map((size, i) => {
-        let selectedButton = false
-        selectedButton = size.id === cart.sizeId ? true : false
-
-        return (
-          <Button
-            selected={selectedButton}
-            onClick={() => {
-              handleColor(size.id)
-            }}
-            key={i}
-          >
-            {size.abbreviation}
-          </Button>
-        )
-      })}
+      {sizes.map((size, i) => (
+        <Button
+          selected={size.id === cart.sizeId ? true : false}
+          onClick={() => {
+            handleColor(size.id)
+          }}
+          key={i}
+        >
+          {size.abbreviation}
+        </Button>
+      ))}
       <hr />
     </div>
   )
