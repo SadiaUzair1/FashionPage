@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Centered, Div, Img, Input } from './style'
 
 export const BagItems = () => {
-  const bagItems = useSelector(state => state.itemReducer)
   const dispatch = useDispatch()
+  const bagItems = useSelector(state => state.itemReducer)
 
   const handleCart = cart => {
     dispatch({ type: REMOVE, payload: cart })

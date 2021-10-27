@@ -1,7 +1,6 @@
 import { calculateTotalPrice, totalPrice, RESET_CART } from 'helpers'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-
 import { Button } from './style'
 
 export const Checkout = () => {

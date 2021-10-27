@@ -1,8 +1,10 @@
 import {
   calculateTotalQuantity,
+  colorIndex,
   DECREASE_QUANTITY,
   INCREASE_QUANTITY,
-  RESET_QUANTITY
+  RESET_QUANTITY,
+  sizeIndex
 } from 'helpers'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -14,16 +16,14 @@ export const Quantity = () => {
   const cart = useSelector(state => state.cartReducer)
   const dispatch = useDispatch()
   let [totalQuantity, settotalQuantity] = useState(0)
-  let sizeIndex = 0
-  let colorIndex = 0
 
   useEffect(() => {
     let total = calculateTotalQuantity(itemSizes, cart)
-    sizeIndex = itemSizes.findIndex(size => size.id === cart.sizeId)
-    colorIndex = itemSizes[sizeIndex].colors.findIndex(color => color.name === cart.colorId)
+    let sizeInd = sizeIndex(itemSizes, cart)
+    let colorInd = colorIndex(itemSizes, sizeInd, cart)
 
-    if (sizeIndex > -1 && colorIndex > -1) {
-      settotalQuantity((totalQuantity = itemSizes[sizeIndex].colors[colorIndex].quantity))
+    if (sizeInd > -1 && colorInd > -1) {
+      settotalQuantity((totalQuantity = itemSizes[sizeInd].colors[colorInd].quantity))
     } else {
       settotalQuantity((totalQuantity = total))
       dispatch({ type: RESET_QUANTITY, payload: 0 })

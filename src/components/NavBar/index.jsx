@@ -1,3 +1,4 @@
+import { BAG_IMAGE, BAG_LINK } from 'helpers'
 import { Centered, Div, GrayBackground, GrayHoverLink, Main, Nav, StyledLink } from './style'
 
 export const NavBar = () => (
@@ -6,8 +7,8 @@ export const NavBar = () => (
       <Main>Daily Fashion</Main>
       <Main>FREE SHIPPING</Main>
       <Main>
-        <GrayHoverLink to={'/bag'}>
-          <img src={'images/bag.png'} height={25} />
+        <GrayHoverLink to={BAG_LINK}>
+          <img src={BAG_IMAGE} height={25} />
         </GrayHoverLink>
       </Main>
     </GrayBackground>

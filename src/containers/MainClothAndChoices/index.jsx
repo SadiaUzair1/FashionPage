@@ -1,5 +1,5 @@
 import { ClothChoices, ClothImage, ItemFeatures } from 'containers'
-import { Div, Left, Center } from './style'
+import { Center, Div, Left } from './style'
 
 export const MainClothAndChoices = () => (
   <Div>

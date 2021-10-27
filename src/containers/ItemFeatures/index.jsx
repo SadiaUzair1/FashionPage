@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
 
 import { AddToBag, Colors, ItemDescription, Materials, Quantity, Sizes } from 'containers'
-import { calculatePrice } from 'helpers'
+import { price } from 'helpers'
 
 export const ItemFeatures = () => {
   const item = useSelector(state => state.itemReducer)
@@ -9,7 +9,7 @@ export const ItemFeatures = () => {
   return (
     <div>
       <h3>{item.name}</h3>
-      <p> {`${item.currency.symbol} ${calculatePrice(item.price)} ${item.currency.title}`}</p>
+      {price(item)}
       <hr />
       <Sizes />
       <Colors />

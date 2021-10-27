@@ -1,6 +1,9 @@
 export const ADD = 'add'
+export const BAG_IMAGE = 'images/bag.png'
+export const BAG_LINK = '/bag'
 export const COLOR = 'color'
 export const CONTACT_EMAIL = 'example@example.com'
+export const CREAM_COLOR = '#faf9f6'
 export const CROSS_IMAGE_PATH = '/images/cross.png'
 export const DECREASE_ITEM_QUANTITY = 'decreaseItemQuantity'
 export const DECREASE_QUANTITY = 'decreaseQuantity'
@@ -24,6 +27,8 @@ export const calculateTotalQuantity = (itemSizes, cartItem) => {
   let selectedSize = itemSizes.find(size => size.id === cartItem.sizeId)
   return [...selectedSize.colors].reduce((a, b) => a.quantity + b.quantity)
 }
+export const colorIndex = (itemSizes, sizeInd, cart) =>
+  itemSizes[sizeInd].colors.findIndex(color => color.name === cart.colorId)
 
 export const getItemSizeName = (bagItems, cart) =>
   bagItems.sizes.find(size => size.id === cart.sizeId).name
@@ -36,3 +41,5 @@ export const price = bagItems =>
 
 export const setUpdatedValue = (items, cart) =>
   items.findIndex(size => size.sizeId === cart.sizeId && size.colorId === cart.colorId)
+
+export const sizeIndex = (itemSizes, cart) => itemSizes.findIndex(size => size.id === cart.sizeId)

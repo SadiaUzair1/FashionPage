@@ -36,7 +36,7 @@ export const Colors = () => {
                 onClick={() => handleColor(i)}
                 key={i}
               >
-                S
+                I
               </Button>
             </div>
           )
