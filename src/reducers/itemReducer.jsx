@@ -27,9 +27,10 @@ export const itemReducer = (state = product, action) => {
       }
 
     case actionTypes.ADD:
-      sizeIndex = state.cart.findIndex(size => size.sizeId === action.payload.sizeId)
-
-      if (sizeIndex !== -1 && state.cart[sizeIndex].colorId === action.payload.colorId) {
+      sizeIndex = state.cart.findIndex(
+        size => size.sizeId === action.payload.sizeId && size.colorId === action.payload.colorId
+      )
+      if (sizeIndex !== -1) {
         cart[sizeIndex].quantity += action.payload.quantity
         return {
           ...state,
